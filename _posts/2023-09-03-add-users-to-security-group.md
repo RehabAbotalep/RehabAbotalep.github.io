@@ -10,7 +10,7 @@ Users are added to the specified group in batches to efficiently handle a large 
 
 The script allows for customization by specifying the PAT, organization, project, group name, and batch size to meet your specific requirements.
 
-```
+{% highlight ruby %}
 # Define your variables
 $PAT = "YOUR_PERSONAL_ACCESS_TOKEN"
 $Organization = "https://dev.azure.com/YOUR_ORGANIZATION_NAME/"
@@ -54,8 +54,7 @@ do {
 
     $skip += $BatchSize
 } while ($allUsers.members.Count -eq $BatchSize)
-
-```
+{% endhighlight %}
 
 ### Let's understand the script:
 
