@@ -56,7 +56,7 @@ do {
 } while ($allUsers.members.Count -eq $BatchSize)
 {% endhighlight %}
 
-### Let's understand the script:
+### Let's dive into the script to understand how it operates:
 
 1. **Set Variables:** The script starts by setting the value of several variables:
 
@@ -67,19 +67,19 @@ do {
 
 2. **Log In:** The script uses the provided Personal Access Token (PAT) to log in to the Azure DevOps organization using the az devops login command. This allows the script to authenticate and perform actions on behalf of the user.
 
-3. **Set Defaults:** The script sets the default organization for the Azure DevOps CLI using the az devops configure command. This means that subsequent commands won't need to specify the organization explicitly.
+3. **Set Defaults:** The script sets the default organization for the Azure DevOps CLI using the `az devops configure` command. This means that subsequent commands won't need to specify the organization explicitly.
 
-4. **Fetch Group Information:** The script uses the az devops security group list command to retrieve a list of security groups from the specified project within the organization. Then converts the output from JSON to a PowerShell object, selects the graphGroups property, and then filters the results to find a specific security group with a display name matching the value stored in the $GroupName variable.
+4. **Fetch Group Information:** The script uses the `az devops security group list` command to retrieve a list of security groups from the specified project within the organization. Then converts the output from JSON to a PowerShell object, selects the `graphGroups` property, and then filters the results to find a specific security group with a display name matching the value stored in the $GroupName variable.
 
-5. **Add Users to Group:** The script then enters a loop where it fetches users in batches of 100 using the az devops user list command. It iterates through the list of users, retrieving their principal name (user identifier) and using the az devops security group membership add command to add each user to the previously identified security group.
+5. **Add Users to Group:** The script then enters a loop where it fetches users in batches of 100 using the `az devops user list` command. It iterates through the list of users, retrieving their principal name (user identifier) and using the `az devops security group membership add` command to add each user to the previously identified security group.
 
-6. **Output and Iteration:** Within the loop, the script outputs information about the iteration number and the user being added to the group using the Write-Host command.
+6. **Output and Iteration:** Within the loop, the script outputs information about the iteration number and the user being added to the group using the `Write-Host` command.
 
 7. **Looping:** The script continues looping and fetching users in batches until the total number of users fetched is less than the batch size (100).
 
 **🔴IMPORTANT❗🔴**
 
-The default limit for displaying project security group members in Azure DevOps is **500**,  So, if you have used the provided script to add over 500 users, keep in mind that solely the initial 500 will appear. 
+The default limit for displaying project security group members in Azure DevOps is **500**,  So, If you plan to use the provided script to add more than 500 users, remember that only the first 500 will be visible. 
 
 **References**
 
