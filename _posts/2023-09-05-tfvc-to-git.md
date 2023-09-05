@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Import and migrate repositories from TFVC to Git"
+title:  "Migrate TFVC to Git in Azure DevOps"
 date:   2023-09-05 19:23:05 +0100
 ---
 
@@ -11,20 +11,22 @@ If you're considering migrating from TFVC to Git in Azure DevOps, this post will
 ### First Option: TFVC Import Tool
 It is an out of box tool in Azure DevOps, The migration is very simple and great for small simple TFVC repositories.
 
-⚠️WARNING⚠️
+Check out the image below for the migration steps:
+
+![import-TFVC.gif](/assets/images/tfvc-git/tfvc-import-tool.gif)
+
+#### Limitation of using this option:
 
 Using this option has some limitations, including:
 
 1. The imported repository and associated history cannot exceed 1GB in size.
 1. You can import up to only 180 days of history.
 
-![import-TFVC.gif](/assets/images/tfvc-git/tfvc-import-tool.gif)
-
 What if your repo size exceeds 1 GB, or you need to import all history which may exceed 180 days? 
 You may want to consider the second option: using the GIT-TFS tool.
 
 ### Second Option: GIT-TFS Tool
-It is a two-way bridge between TFVC and Git, and you can use it to perform a migration. It is suitable for a migration with full a history, more than the 180 days that the Import tool supports.
+It is a two-way bridge between TFVC and Git, and you can use it to perform a migration. It is suitable for a migration with a full history, more than the 180 days that the Import tool supports.
 
 **Here are the steps to migrate from TFVC to Git using GIT-TFS:**
 
@@ -34,14 +36,19 @@ It is a two-way bridge between TFVC and Git, and you can use it to perform a mig
 
 3. Run git tfs clone, and pass the TFVC repository’s URL and repository path as arguments.
 
-For example, if you have this TFVC repo `example` under `Test` organization the URL should be as the following
+The URL should be as following:
 
-`git tfs clone https://dev.azure.com/Test $/example`
+`git tfs clone https://dev.azure.com/{Organization} $/{Repo}`
+
+For example, if you want to migrate a repository named `example` from `https://dev.azure.com/TestOrg` run 
+
+`git tfs clone https://dev.azure.com/TestOrg $/example`
 
 After running this command, you will have a local Git repo migrated from TFVC. You can then push the resulting local Git repository to any Git platform of your choice, such as Azure DevOps, GitHub, Bitbucket, or others.
 
-<span style="color:red">**Note:**</span> The cloning process can take a significant amount of time, depending on the size of your TFVC repository and its history.
-
 ![import-TFVC-tfs.gif](/assets/images/tfvc-git/git-tfs.gif)
 
-In summary, with the step-by-step instructions provided in this post, you can successfully migrate from TFVC to Git in Azure DevOps. By doing so, you can take advantage of the benefits that Git provides and improve your team's productivity and collaboration.
+<span style="color:red">**Note:**</span> The cloning process can take a significant amount of time, depending on the size of your TFVC repository and its history.
+
+
+In summary, with the instructions provided in this post, you can successfully migrate from TFVC to Git in Azure DevOps. By doing so, you can take advantage of the benefits that Git provides and improve your team's productivity and collaboration.
