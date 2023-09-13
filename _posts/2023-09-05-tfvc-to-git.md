@@ -48,7 +48,7 @@ After running this command, you will have a local Git repo migrated from TFVC. Y
 
 ![import-TFVC-tfs.gif](/assets/images/tfvc-git/git-tfs.gif)
 
-<span style="color:red">**Note:**</span> The cloning process can take a significant amount of time, depending on the size of your TFVC repository and its history.
+**❗Note:** The cloning process can take a significant amount of time, depending on the size of your TFVC repository and its history.
 
 
 In summary, with the instructions provided in this post, you can successfully migrate from TFVC to Git in Azure DevOps. By doing so, you can take advantage of the benefits that Git provides and improve your team's productivity and collaboration.
