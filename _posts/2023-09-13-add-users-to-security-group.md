@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Automate Adding Users to a Security Group in Azure DevOps"
-date:   2023-09-03 21:35:05 +0100
+date:   2023-09-13 07:35:05 +0100
 ---
 
 This PowerShell script is designed to automate the process of adding users to a security group in Azure DevOps. 
