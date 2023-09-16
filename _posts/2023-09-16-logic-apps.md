@@ -330,7 +330,6 @@ You can find the code for the developed Logic Apps as following:
 
 You can watch the following video that walks you through all the steps explained in this post.
 
-<iframe width="560" height="315" src="http://www.youtube.com/watch?v=AhBsuOYnEEI" frameborder="0" allowfullscreen="true"> </iframe>
-
+[![Video](http://img.youtube.com/vi/AhBsuOYnEEI&t=412s/0.jpg)](http://www.youtube.com/watch?v=AhBsuOYnEEI&t=412s)
 
 **[⬆ Back To Top](#in-this-post)**
