@@ -22,24 +22,22 @@ date:   2023-09-16 07:40:05 +0100
 In today's fast-paced business landscape, maximizing productivity is crucial for staying competitive and delivering outstanding results.
 By seamlessly integrating Azure DevOps and Logic Apps, organizations can achieve significant productivity gains.
 
-In this blog post, we will explore a real use case scenario for a Support System.
-
-This will demonstrate how this integration can maximize productivity within your organization, and provide efficient assistance to the customers.
+In this blog post, we will explore a real use case scenario for a Support System. This will demonstrate how this integration can maximize productivity within your organization, and provide an efficient assistance to the customers.
 
 
 ## Workflows
 
-There are two essential workflows in our support process:
+There are two essential workflows in our use case (Support System):
 
 #### Workflow (1): Ticket Creation and Customer Notification
 
-The first workflow begins when a customer send an email to the support team, this will be the trigger for the Logic App, and once it is triggered, it performs two actions:
+The first workflow begins when a customer sends an email to the support team, this will be the trigger for the Logic App, and once it is triggered, it performs two actions:
 
 1. **Create a New Ticket:** A new work item of type `Ticket` will be created in our Azure DevOps Organization project. This ticket will be populated with all the information required like the sender, and all necessary details extracted from the incoming email.
 
-2. **Send an auto reply Email:** after creating the ticket, an auto-reply email will be send to the customer, acknowledging their request and informing them that their ticket has been successfully created. 
+2. **Send an auto reply Email:** After creating the ticket, an auto-reply email will be send to the customer, acknowledging their request and informing them that their ticket has been successfully created. 
 
-Our support team then reviews the board, identifies the newly created ticket, and starts working on it. Once the ticket is closed, this will trigger the second workflow.
+The support team then reviews the board, identifies the newly created ticket, and starts working on it. Once the ticket is closed, this will trigger the second workflow.
 
 #### Workflow (2): Ticket Closure and Solution Delivery
 
@@ -47,7 +45,7 @@ The second workflow comes into play when a support agent successfully resolves t
 
 The closure of the ticket serves as the trigger for this workflow. As soon as the ticket is closed, the Logic App takes over and executes a crucial action:
 
-**Customer Solution Delivery:** an email will be send to the customer, containing the comprehensive solution to their ticketed issue.
+**Customer Solution Delivery:** An email will be send to the customer, containing the comprehensive solution to their ticketed issue.
 
 ![Workflow](/assets/images/logic-apps/01-workflow-animation.gif)
 
@@ -55,22 +53,22 @@ The closure of the ticket serves as the trigger for this workflow. As soon as th
 
 Before proceeding with the implementation of the demo, it is necessary to complete the following steps:
 
-1. Create a new customized inherited process within your Azure DevOps organization
+1. Create a new customized inherited process within your Azure DevOps organization.
 
-2. Create a new work item type (Ticket) within the newly created process
+2. Create a new work item type (Ticket) within the newly created process.
 
 3. Create two custom fields to this newly created work item type. 
 
-    The first custom field should be of the single-line string type, designed to capture the customer (sender) email address.
+    - The first custom field should be of the single-line string type, designed to capture the customer's email address.
 
-    The second custom field should be of the multi-line string type, designed to capture the customer's issue resolution.
+    - The second custom field should be of the multi-line string type, designed to capture the customer's issue resolution.
 
-4. Create a new project in your organization based on the created process in `step (1)`
+4. Create a new project in your organization based on the created process in `step (1)`.
 
 
 ## Implementation
 
-Before start creating our Logic Apps, let's have a look to the board, it appears as shown in the following screenshot
+Before start creating our Logic Apps, let's have a look at the board, it appears as shown in the following screenshot:
 
 ![Tickets](/assets/images/logic-apps/1-tickets.png)
 
@@ -80,13 +78,13 @@ If we open any ticket to have a look from inside, you'll see that it has an ID (
 
 ### *Task 1: Developing the first workflow*
 
-1. Log in to your Azure account at [https://portal.azure.com](https://portal.azure.com)
+1. Log in to your Azure account at [https://portal.azure.com](https://portal.azure.com).
 
-2. In the home page search for `Logic App` and select it
+2. In the home page search for `Logic App` and select it.
 
     ![Select Logic Apps](/assets/images/logic-apps/3-search-for-logic-app.png)
 
-3. Click on Add in Logic Apps page
+3. Click on Add in Logic Apps page.
 
     ![Add Logic App](/assets/images/logic-apps/3-add-logic-app.png)
 
@@ -103,11 +101,11 @@ If we open any ticket to have a look from inside, you'll see that it has an ID (
     <br>
     I will select the Consumption plan for this demo. It's important to note that under this plan, a single Logic App can have only one workflow, so if we need to create more than one workflow we will need to create separate Logic Apps for each one.
 
-    Then click on `Review + create`
+    Then click on `Review + create`.
 
     ![Create the Logic App](/assets/images/logic-apps/5-create-logic-app.png)
 
-6. The deployment will take some time, and after it's completed you can click on `Go to resource`
+6. The deployment will take some time, and after it's completed you can click on `Go to resource`.
 
     ![Deployment Completed](/assets/images/logic-apps/6-deployment-completed.png)
 
@@ -146,7 +144,7 @@ If we open any ticket to have a look from inside, you'll see that it has an ID (
 
 13. As our first action is to create a new work item in our Azure DevOps organization project, we must establish a connection to Azure DevOps.
 
-    Search for Azure DevOps Connector and select it, and then select the required action which is `Create a work item`
+    Search for Azure DevOps Connector and select it, and then select the required action which is `Create a work item`.
 
     ![Azure DevOps Connector](/assets/images/logic-apps/13-azure-devops-connector.png)
 
@@ -156,7 +154,7 @@ If we open any ticket to have a look from inside, you'll see that it has an ID (
 
     ![Azure DevOps sign in](/assets/images/logic-apps/15-sign-in-azure.png)
 
-15. Add the required attributes
+15. Add the required attributes:
 
     - Organization Name
     - Project Name
@@ -213,7 +211,7 @@ If we open any ticket to have a look from inside, you'll see that it has an ID (
 
     - **Body:** Add the desired content.
 
-    **❗Note:** You can access the ID of the ticket from the last step.
+    **❗Note:** You can access the ID of the ticket from the last step of the workflow (When a new email arrives).
 
     ![Add attributes](/assets/images/logic-apps/22-send-email-arrtibutes.png)
 
@@ -227,11 +225,11 @@ If we open any ticket to have a look from inside, you'll see that it has an ID (
 
 Since we've selected the Consumption plan, to start developing the second workflow, we'll need to create a new Logic App.
 
-1. Navigate to the resource group we've previously created, and click on `Add` to add a new resource (Logic App)
+1. Navigate to the resource group we've previously created, and click on `Add` to add a new resource (Logic App).
 
     ![Second Logic App](/assets/images/logic-apps/24-create-second-logic-app.png)
 
-2. Enter the Project details for this Logic App, as we did in the `step (5)` of the previous task
+2. Enter the Project details for this Logic App, as we did in the `step (5)` of the previous task.
 
     ![Review Create](/assets/images/logic-apps/25-second-review-create.png)
 
@@ -243,7 +241,7 @@ Since we've selected the Consumption plan, to start developing the second workfl
 
     ![Trigger](/assets/images/logic-apps/26-when-work-item-closed.png)
 
-4. Add the required attributes
+4. Add the required attributes:
 
     - Organization Name
 
@@ -257,7 +255,7 @@ Since we've selected the Consumption plan, to start developing the second workfl
 
     ![Send an email](/assets/images/logic-apps/28-send-email.png)
 
-6. To configure the email attributes for the auto-reply:
+6. To configure the email attributes:
 
     - **To:** Select `Email` from the right menu. This custom field contains the sender's email address, as we configured in `step (18)` of the previous task.
 
@@ -265,9 +263,9 @@ Since we've selected the Consumption plan, to start developing the second workfl
 
         `Ticket No# <Id> resolved`
 
-    - **Body:** Add the desired content. To include the resolution of the customer's issue, access it from the second custom field we created (`Reply`) .
+    - **Body:** Add the desired content. To include the resolution of the customer's issue, access it from the second custom field we previously created as prerequisites (`Reply`).
 
-    **❗Note:** You can access the ID of the ticket, Email, and Reply fields from the last step.
+    **❗Note:** You can access the ID of the ticket, Email, and Reply fields from the last step of the workflow (When a work item is closed).
 
     ![Title](/assets/images/logic-apps/29-send-email-to-custom-field.png)
 
@@ -317,7 +315,7 @@ If you navigate back to Logic Apps overview, you can find and access the Run his
 
 You can find the code for the developed Logic Apps as following:
 
-1. On the logic app's menu, under Development Tools, select Logic App Code View.
+1. On the Logic App's menu, under Development Tools, select Logic App Code View.
 
 ![Code view](/assets/images/logic-apps/36-code-view.png)
 
