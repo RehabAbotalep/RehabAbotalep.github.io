@@ -28,11 +28,13 @@ The problem is the migration process pauses every time it finds an item `moved` 
 
 So I created this PowerShell script that helps me to list all moved Work Items. I run the script before the migration, and if there are any moved items it lists their IDs in a txt file, I exclude these IDs from the query and run the migration.
 
-Once the migration of all the other items is completed, I include the previously excluded moved work items in the query while mapping their old Area/Iteration paths to a new one appropriately.
+Once the migration of all the other items is completed, I include the previously excluded moved work items in the query while mapping their old Area/Iteration paths to a new one appropriately or while setting `ReplayRevisions` to false.
 
 ![](/assets/images/list-moved-work-items/1-exclude-items.png)
 
 ![](/assets/images/list-moved-work-items/2-include-items.png)
+
+![](/assets/images/list-moved-work-items/3-include-false-replay-revisions.png)
 
 Here is the issues link on the GitHub repo for more details.
 
