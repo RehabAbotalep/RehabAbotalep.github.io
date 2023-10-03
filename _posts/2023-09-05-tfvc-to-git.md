@@ -30,8 +30,8 @@ Check out the image below for the migration steps:
 
 Using this option has some limitations, including:
 
-1. The imported repository and associated history cannot exceed 1GB in size.
-1. You can import up to only 180 days of history.
+1. The imported repository and associated history cannot exceed `1GB` in size.
+1. You can import up to only `180` days of history.
 
 What if your repo size exceeds 1 GB, or you need to import all history which may exceed 180 days? 
 You may want to consider the second option: using the GIT-TFS tool.
