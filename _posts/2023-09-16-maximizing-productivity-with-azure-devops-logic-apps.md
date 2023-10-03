@@ -219,7 +219,7 @@ If we open any ticket to have a look from inside, you'll see that it has an ID (
 
     ![Save](/assets/images/logic-apps/23-first-work-flow.png)
 
-**[⬆ Back To Top](#in-this-post)**
+**[⬆ **Back** To Top](#in-this-post)**
 
 ### *Task 2: Developing the second workflow*
 
@@ -279,8 +279,6 @@ Since we've selected the Consumption plan, to start developing the second workfl
 
     ![Resources](/assets/images/logic-apps/32-resources-created.png)
 
-**[⬆ Back To Top](#in-this-post)**
-
 
 ## Test Workflows
 
@@ -328,6 +326,6 @@ You can find the code for the developed Logic Apps as following:
 
 You can watch the following video that walks you through all the steps explained in this post.
 
-[![Video](http://img.youtube.com/vi/AhBsuOYnEEI&t=412s/0.jpg)](http://www.youtube.com/watch?v=AhBsuOYnEEI&t=412s)
+[![Video on YouTube](https://img.youtube.com/vi/AhBsuOYnEEI/0.jpg)](https://www.youtube.com/watch?v=SAhBsuOYnEEI)
 
 **[⬆ Back To Top](#in-this-post)**
