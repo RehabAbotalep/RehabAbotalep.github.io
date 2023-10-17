@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Migrate TFVC to Git in Azure DevOps"
-date:   2023-10-03 19:23:05 +0100
+date:   2023-09-05 19:23:05 +0100
 ---
 
 ### In this post
@@ -30,8 +30,13 @@ Check out the image below for the migration steps:
 
 Using this option has some limitations, including:
 
-1. The imported repository and associated history cannot exceed `1GB` in size.
-1. You can import up to only `180` days of history.
+The imported repository and associated history cannot exceed `1GB` in size.
+
+![Size Limitation](/assets/images/tfvc-git/size-limitation.png)
+
+You can import up to only `180` days of history.
+
+![History Limitation](/assets/images/tfvc-git/history-limitation.png)
 
 What if your repo size exceeds 1 GB, or you need to import all history which may exceed 180 days? 
 You may want to consider the second option: using the GIT-TFS tool.
@@ -61,7 +66,14 @@ After running this command, you will have a local Git repo migrated from TFVC. Y
 
 ![import-TFVC-tfs.gif](/assets/images/tfvc-git/git-tfs.gif)
 
-**❗ Note ❗:** The cloning process can take a significant amount of time, depending on the size of your TFVC repository and its history.
+**❗ NOTES ❗**
+
+- The cloning process can take a significant amount of time, depending on the size of your TFVC repository and its history. I have worked on a repository that was **2 GB** in size with **3 branches**, and it took approximately **4 hours** to complete the migration.
+
+- If your repository's name contains spaces, it's essential to enclose it within double quotes when initiating the migration process. For example, if you intend to migrate a repository named `example repo` from `https://dev.azure.com/TestOrg`, run the following command:
+
+    `git tfs clone https://dev.azure.com/TestOrg $/"example repo"`
+
 
 ## Summary
 
