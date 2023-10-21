@@ -7,9 +7,9 @@ date:   2023-09-05 19:23:05 +0100
 ### In this post
 
 - [Overview](#overview)
-- [TFVC Import Tool](#first-option-tfvc-import-tool)
-- [Limitation of using TFVC Import Tool](#limitation-of-using-tfvc-import-tool)
-- [GIT-TFS Tool](#second-option-git-tfs-tool)
+- [First Option: TFVC Import Tool](#first-option-tfvc-import-tool)
+- [Limitation of using TFVC Import Tool:](#limitation-of-using-tfvc-import-tool)
+- [Second Option: GIT-TFS Tool](#second-option-git-tfs-tool)
 - [Summary](#summary)
 
 ## Overview
