@@ -7,10 +7,13 @@ date:   2023-09-16 07:40:05 +0100
 ### In this post
 
 - [Overview](#overview)
+- [Workflows](#workflows)
+    - [Workflow (1): Ticket Creation and Customer Notification](#workflow-1-ticket-creation-and-customer-notification)
+    - [Workflow (2): Ticket Closure and Solution Delivery](#workflow-2-ticket-closure-and-solution-delivery)
 - [Prerequisites](#prerequisites)
 - [Implementation](#implementation)
-- [Task 1: Developing the first workflow](#task-1-developing-the-first-workflow)
-- [Task 2: Developing the second workflow](#task-2-developing-the-second-workflow)
+    - [Task (1): Developing the first workflow](#task-1-developing-the-first-workflow)
+    - [Task (2): Developing the second workflow](#task-2-developing-the-second-workflow)
 - [Test Workflows](#test-workflows)
 - [Logic App code view](#logic-app-code-view)
 - [References](#references)
@@ -76,7 +79,7 @@ If we open any ticket to have a look from inside, you'll see that it has an ID (
 
 ![Ticket from inside](/assets/images/logic-apps/2-ticket-from-inside.png)
 
-### *Task 1: Developing the first workflow*
+#### Task (1): Developing the first workflow
 
 1. Log in to your Azure account at [https://portal.azure.com](https://portal.azure.com).
 
@@ -221,7 +224,7 @@ If we open any ticket to have a look from inside, you'll see that it has an ID (
 
 **[⬆ **Back** To Top](#in-this-post)**
 
-### *Task 2: Developing the second workflow*
+#### Task (2): Developing the second workflow
 
 Since we've selected the Consumption plan, to start developing the second workflow, we'll need to create a new Logic App.
 
