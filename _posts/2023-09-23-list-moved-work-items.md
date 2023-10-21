@@ -4,6 +4,8 @@ title:  "PowerShell Script: List Work Items Moved Between Projects"
 date:   2023-09-22 07:20:05 +0100
 ---
 
+`azure-devops` `azure-devops-migration-tools` `powershell-script` `migration`
+
 ### In this post
 
 - [Overview](#overview)

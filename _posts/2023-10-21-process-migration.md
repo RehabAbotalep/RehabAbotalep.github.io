@@ -3,6 +3,9 @@ layout: post
 title:  "Migrating Inherited Process in Azure DevOps"
 date:   2023-10-21 16:40:05 +0100
 ---
+
+`azure-devops` `process-migrator` `migration`
+
 ### In this post
 - [Overview](#overview)
 - [Prerequisites](#prerequisites)

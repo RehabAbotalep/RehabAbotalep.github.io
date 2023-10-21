@@ -4,6 +4,8 @@ title:  "Migrate TFVC to Git in Azure DevOps"
 date:   2023-09-05 19:23:05 +0100
 ---
 
+`azure-devops` `tfvc` `git` `migration`
+
 ### In this post
 
 - [Overview](#overview)

@@ -4,6 +4,8 @@ title:  "Maximizing Productivity with Azure DevOps & Logic Apps"
 date:   2023-09-16 07:40:05 +0100
 ---
 
+`azure-devops` `logic-apps` `productivity`
+
 ### In this post
 
 - [Overview](#overview)
