@@ -17,7 +17,7 @@ date:   2023-10-21 16:40:05 +0100
 
 ## Overview
 
-In this post, we'll explore how to migrate a customized inherited process from one Azure DevOps organization to another. We'll walk you through the process using the powerful [process-migrator](https://github.com/microsoft/process-migrator) tool, developed by Microsoft.
+In this post, we'll explore how to migrate a customized inherited process from one Azure DevOps organization to another. We'll walk through the process using the powerful [process-migrator](https://github.com/microsoft/process-migrator) tool, developed by Microsoft.
 
 ## Prerequisites
 
@@ -139,7 +139,9 @@ You're all set to start the migration process. Simply open the command prompt (c
 - `--mode=<migrate (default)/import/export>`: Choose the migration mode.
 - `--config=<your-configuration-file-path>`: Specify the path to your configuration file.
 
-The tool will export the Source process template into a JSON file and then import it into the Target organization.
+The tool will first export the Source process template into a JSON file and then import it into the Target organization.
+
+Check all work item types and their fields, states, and rules to make sure everything migrated successfully.
 
 ![Migrated](/assets/images/process-migration/13-process-migrated-successfully.png)
 
@@ -153,7 +155,7 @@ Here are the Target organization processes before and after the Migration:
 
 ![processes after Migration](/assets/images/process-migration/15-target-processes-after-migration.png)
 
-The imported JSON and log files can be located within the `Output` folder, in the same directory as your configuration file.
+The exported JSON and log files are located within the `Output` folder, in the same directory as your configuration file.
 
 ![Output Folder Location](/assets/images/process-migration/16-output-folder.png)
 
