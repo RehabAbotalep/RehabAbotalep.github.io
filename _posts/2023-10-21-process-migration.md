@@ -134,16 +134,29 @@ You're all set to start the migration process. Simply open the command prompt (c
 
 `process-migrator`
 
-**NOTE:** You can also specify the following switches:
+**NOTES:** 
 
-- `--mode=<migrate (default)/import/export>`: Choose the migration mode.
-- `--config=<your-configuration-file-path>`: Specify the path to your configuration file.
+1. You can also specify the following switches:
 
-The tool will first export the Source process template into a JSON file and then import it into the Target organization.
+   - `--mode=<migrate (default)/import/export>`: Choose the migration mode.
+   - `--config=<your-configuration-file-path>`: Specify the path to your configuration file.
 
-Check all work item types and their fields, states, and rules to make sure everything migrated successfully.
+2. When running the command from the configuration file location, it is optional to specify the configuration file path. If the configuration file is located elsewhere, you should add its path using the `--config` switch. The full command would then be: `process-migrator --config=<your-configuration-file-path>`.
+
+3. The tool's default mode is migrate, so it is optional to specify it. However, if you intend to use the tool for import or export only, you should specify the mode using the `--mode` switch. The complete command would be: `process-migrator --mode=import/export`.
+
+
+**Migration Process:**
+
+1. The tool will start by exporting the Source process template to a JSON file.
+2. Subsequently, it will import the exported template into the Target organization.
 
 ![Migrated](/assets/images/process-migration/13-process-migrated-successfully.png)
+
+**Verification:**
+
+1. Once the migration is successfully completed, you can review all work item types.
+2. Verify that their fields, states, and rules have been migrated successfully.
 
 Here are the Target organization processes before and after the Migration:
 
