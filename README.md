@@ -2,8 +2,9 @@
 
 In this space, I'll be sharing my personal journey, challenges, and experiences in the world of DevOps.
 
-|![Azure DevOps](./assets/images/readme/azure-devops.png) |[Migrating Inherited Process in Azure DevOps](https://rehababotalep.github.io/2023/10/21/process-migration.html)|
+|![Azure DevOps](./assets/images/readme/power-shell.png) |[Automating Test Cases Deletion in Azure DevOps with PowerShell](https://rehababotalep.github.io/2023/11/23/delete-testcases.html)|
 |:---:|:---:|
+|![Azure DevOps](./assets/images/readme/azure-devops.png) |[Migrating Inherited Process in Azure DevOps](https://rehababotalep.github.io/2023/10/21/process-migration.html)|
 |![Azure DevOps](./assets/images/readme/power-shell.png) |[PowerShell Script: List Work Items Moved Between Projects](https://rehababotalep.github.io/2023/09/22/list-moved-work-items.html)|
 |![Logic App](./assets/images/readme/logic-app.png) |[Maximizing Productivity with Azure DevOps & Logic Apps](https://rehababotalep.github.io/2023/09/16/maximizing-productivity-with-azure-devops-logic-apps.html)|
 |![Azure DevOps](./assets/images/readme/power-shell.png) |[Automate Adding Users to a Security Group in Azure DevOps](https://rehababotalep.github.io/2023/09/13/add-users-to-security-group.html)|
