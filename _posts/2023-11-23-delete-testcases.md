@@ -23,7 +23,86 @@ To address this limitation, I developed a PowerShell script to streamline the pr
 
 ## Script
 
-<script src="https://gist.github.com/RehabAbotalep/ed19d7fff5404d0022968675caaafb44.js"></script>
+{% highlight ruby %}
+
+# Variables (Update these as needed)
+$organizationUrl = "ORGANIZATION_URL"
+$projectName = "PROJECT_NAME"
+$pat = "PAT"
+
+function New-AuthorizationHeader {
+    param (
+        [string]$Token
+    )
+
+    $headerValue = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes(":$($Token)"))
+    return @{ Authorization = "Basic $headerValue" }
+}
+
+function Get-AzureDevOpsTestCases {
+    param (
+        [string]$OrganizationUrl,
+        [string]$ProjectName,
+        [string]$Pat
+    )
+
+    $header = New-AuthorizationHeader -Token $Pat
+
+    $query = "Select [System.Id] From WorkItems Where [System.WorkItemType] = 'Test Case' and [System.TeamProject] = '$ProjectName'"
+    $body = @{ query = $query } | ConvertTo-Json
+    $url = "$OrganizationUrl/$ProjectName/_apis/wit/wiql?api-version=7.1"
+
+    try {
+        $response = Invoke-RestMethod -Uri $url -Method POST -ContentType "application/json" -Headers $header -Body $body
+        return $response.workItems
+    } catch {
+        $Host.UI.WriteErrorLine("Error retrieving test cases: $_")
+    }
+}
+
+function Delete-AzureDevOpsTestCase {
+    param (
+        [string]$OrganizationUrl,
+        [string]$ProjectName,
+        [string]$Pat,
+        [string]$TestCaseId
+    )
+
+    $header = New-AuthorizationHeader -Token $Pat
+    $uri = "$OrganizationUrl/$ProjectName/_apis/test/testcases/$TestCaseId/?api-version=7.1"
+
+    try {
+        Write-Host "Deleting Test Case $TestCaseId"
+        Invoke-RestMethod -Uri $uri -Method DELETE -ContentType "application/json" -Headers $header
+        Write-Host "Deleted Test Case: $TestCaseId"
+    } catch {
+        $Host.UI.WriteErrorLine("Error deleting test case ${TestCaseId}: $_")
+    }
+}
+
+
+function Remove-AllAzureDevOpsTestCases {
+    param (
+        [string]$OrganizationUrl,
+        [string]$ProjectName,
+        [string]$Pat
+    )
+
+    $testCases = Get-AzureDevOpsTestCases -OrganizationUrl $OrganizationUrl -ProjectName $ProjectName -Pat $Pat
+
+    foreach ($testCase in $testCases) {
+        $testCaseId = $testCase.id
+        Delete-AzureDevOpsTestCase -OrganizationUrl $OrganizationUrl -ProjectName $ProjectName -Pat $Pat -TestCaseId $testCaseId
+    }
+
+    Write-Host "All test cases deleted."
+}
+
+# Remove all test cases
+Remove-AllAzureDevOpsTestCases -OrganizationUrl $organizationUrl -ProjectName $projectName -Pat $pat
+
+{% endhighlight %}
+
 
 ## Dive into the script
 
