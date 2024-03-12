@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How to Pass GitHub Certification Exam: My Own Certification Journey"
+title:  "How to Pass GitHub Foundations Certification Exam: My Own Certification Journey"
 date:   2024-03-12 02:25:05 +0100
 ---
 
