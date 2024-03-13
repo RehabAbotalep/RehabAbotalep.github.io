@@ -11,7 +11,7 @@ date:   2024-03-12 02:25:05 +0100
 - [Overview](#overview)
 - [About GitHub Foundation Exam](#about-github-foundations-certification)
 - [Scheduling the Exam](#scheduling-the-exam)
-- [Preparing for GitHub Foundation Exam](#preparing-for-github-foundation-exam)
+- [Preparing for the Exam](#preparing-for-the-exam)
 - [Taking the Exam (Proctored at Home)](#taking-the-exam-proctored-at-home)
 - [After the Exam](#after-the-exam)
 - [Conclusion](#conclusion)
@@ -63,7 +63,7 @@ Follow these registration steps:
 
 Once you've completed these steps, you'll receive an email from PSI Online containing your exam date, time, and important instructions. Make sure to read through them carefully.
 
-## Preparing for GitHub Foundation Exam
+## Preparing for the Exam
 
 Preparation is key for exams and certifications. It includes planning, understanding the exam content, and dedicating focused study time. Remember to **Avoid Relying on Exam Dumps**, as they don't guarantee success. Embrace the process of studying and expanding your knowledge.
 
