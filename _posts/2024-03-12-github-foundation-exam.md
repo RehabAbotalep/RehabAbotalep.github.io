@@ -384,7 +384,7 @@ For quick reference, below is a list of exam topics along with the corresponding
 
 - [Create a Pull Request Template](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository)
 
-## During The Exam (Proctored at Home)
+## Taking the Exam (Proctored at Home)
 
 It's important to sign in up to 15 minutes before your test start time as per the instructions provided when booking your exam. Ensure you adhere to the technical requirements and have a valid, current ID ready. The name on this ID must be in Roman (English) alphabet characters and must match the name used when scheduling the exam.
 
