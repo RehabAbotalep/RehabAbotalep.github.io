@@ -27,7 +27,7 @@ date:   2023-09-16 07:40:05 +0100
 In today's fast-paced business landscape, maximizing productivity is crucial for staying competitive and delivering outstanding results.
 By seamlessly integrating Azure DevOps and Logic Apps, organizations can achieve significant productivity gains.
 
-In this blog post, we will explore a real use case scenario for a Support System. This will demonstrate how this integration can maximize productivity within your organization, and provide an efficient assistance to the customers.
+In this blog post, we will explore a real use case scenario for a Support System. This will demonstrate how this integration can maximize productivity within your organization, and provide efficient assistance to the customers.
 
 
 ## Workflows
@@ -93,15 +93,15 @@ If we open any ticket to have a look from inside, you'll see that it has an ID (
 
     ![Add Logic App](/assets/images/logic-apps/3-add-logic-app.png)
 
-4. Under Resource group, click Create new. Enter the desired name and click OK, you can also select already existing one from the dropdown menu.
+4. Under Resource group, click Create new. Enter the desired name and click OK, you can also select an already existing one from the dropdown menu.
 
     ![Create Resource Group](/assets/images/logic-apps/4-create-resource-group.png)
 
-5. In the Basic tab, choose your subscription, provide a name for your Logic App, select the desired region, and specify the Plan type which dicates how the logic scales, what features are enabled, and how it is priced.
+5. In the Basic tab, choose your subscription, provide a name for your Logic App, select the desired region, and specify the Plan type which dictates how the logic scales, what features are enabled, and how it is priced.
 
     There are two plans:
     - **Standard:** Best for enterprise-level
-    - **Consumption:** Best for entry-level. Pay only as much your workflow runs.
+    - **Consumption:** Best for entry-level. Pay only as much as your workflow runs.
 
     <br>
     I will select the Consumption plan for this demo. It's important to note that under this plan, a single Logic App can have only one workflow, so if we need to create more than one workflow we will need to create separate Logic Apps for each one.
@@ -116,7 +116,7 @@ If we open any ticket to have a look from inside, you'll see that it has an ID (
 
 7. Once click on Go to resource, it will immediately open the `Logic App Designer` view for the deployed Logic App.
 
-    With in this View, we can visually develop our first workflow. Select Blank Logic App. 
+    With this View, we can visually develop our first workflow. Select Blank Logic App. 
 
     ![Logic App Designer](/assets/images/logic-apps/7-logic-app-designer.png)
 
@@ -137,7 +137,7 @@ If we open any ticket to have a look from inside, you'll see that it has an ID (
 
     ![When eamil arrives](/assets/images/logic-apps/10-when-email-arrives.png)
 
-11. Most connectors typically need you to create and set up a connection to the associated service, so that we need to authenticate access to Outlook. 
+11. Most connectors typically need you to create and set up a connection to the associated service so that we need to authenticate access to Outlook. 
 
     Click `Sign in` and use your email, which is where you'll receive customer issues.
 
@@ -149,7 +149,7 @@ If we open any ticket to have a look from inside, you'll see that it has an ID (
 
 13. As our first action is to create a new work item in our Azure DevOps organization project, we must establish a connection to Azure DevOps.
 
-    Search for Azure DevOps Connector and select it, and then select the required action which is `Create a work item`.
+    Search for Azure DevOps Connector select it, and then select the required action which is `Create a work item`.
 
     ![Azure DevOps Connector](/assets/images/logic-apps/13-azure-devops-connector.png)
 
@@ -184,7 +184,7 @@ If we open any ticket to have a look from inside, you'll see that it has an ID (
 
     ![New Paramters](/assets/images/logic-apps/18-add-new-paramters.png)
 
-19. Select `Other Fields` that includes custom fields.
+19. Select `Other Fields` that include custom fields.
 
     ![Other Fields](/assets/images/logic-apps/19-other-fields.png)
 
@@ -220,11 +220,11 @@ If we open any ticket to have a look from inside, you'll see that it has an ID (
 
     ![Add attributes](/assets/images/logic-apps/22-send-email-arrtibutes.png)
 
-23. Now we are done of developing the first workflow, click `Save`
+23. Now we are done developing the first workflow, click `Save`
 
     ![Save](/assets/images/logic-apps/23-first-work-flow.png)
 
-**[⬆ **Back** To Top](#in-this-post)**
+**[⬆ Back To Top](#in-this-post)**
 
 #### Task (2): Developing the second workflow
 
@@ -268,7 +268,7 @@ Since we've selected the Consumption plan, to start developing the second workfl
 
         `Ticket No# <Id> resolved`
 
-    - **Body:** Add the desired content. To include the resolution of the customer's issue, access it from the second custom field we previously created as prerequisites (`Reply`).
+    - **Body:** Add the desired content. To include the resolution of the customer's issue, access it from the second custom field we previously created as prerequisite (`Reply`).
 
     **❗Note:** You can access the ID of the ticket, Email, and Reply fields from the last step of the workflow (When a work item is closed).
 
@@ -276,7 +276,7 @@ Since we've selected the Consumption plan, to start developing the second workfl
 
     ![Send email action](/assets/images/logic-apps/30-send-email-completed.png)
 
-7. Now we are done of developing the second workflow, click `Save`
+7. Now we are done developing the second workflow, click `Save`
 
     ![Save](/assets/images/logic-apps/31-second-workflow.png)
 
@@ -291,16 +291,16 @@ Let's test the workflows:
 
 Let's assume that I am a customer, I have an issue, and I want to report that issue, so I send an email to the support team.
 
-Once the email sent (the trigger of our first workflow), two actions will be performed.
+Once the email is sent (the trigger of our first workflow), two actions will be performed.
 
 1. A new ticket is automatically generated in our DevOps organization project.
 2. An auto-reply email will be sent to the customer.
 
 Now, it's the support team's turn. They will review the created ticket, assign it to a team member, and move the item from the `New` to `approved` state,
 
-The assignee will move it to the `committed` state, start working on it, once finished, will put the resolution of the issue in the `Reply` custom field, and then closed the item.
+The assignee will move it to the `committed` state, start working on it, and once finished, will put the resolution of the issue in the `Reply` custom field and then close the item.
 
-Once the item closed (the trigger of our second workflow), an action will be performed.
+Once the item is closed (the trigger of our second workflow), an action will be performed.
 
 1. Sending an email to me, the customer, containing the resolution of the issue:
 
@@ -308,7 +308,7 @@ Take a look at the gif below:
 
 ![Test workflow](/assets/images/logic-apps/33-test-workflow.gif)
 
-If you navigate back to Logic Apps overview, you can find and access the Run history, which provides a record of the past runs of your Logic App workflows. This history allows you to track and monitor the execution of your workflows, including any errors or successful completions.
+If you navigate back to the Logic Apps overview, you can find and access the Run history, which provides a record of the past runs of your Logic App workflows. This history allows you to track and monitor the execution of your workflows, including any errors or successful completions.
 
 ![Run history](/assets/images/logic-apps/34-run-history.png)
 
