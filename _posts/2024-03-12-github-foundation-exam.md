@@ -315,7 +315,9 @@ For quick reference, below is a list of exam topics along with the corresponding
 
 #### Authentication and Security
 
-- [Explain how to secure your account with 2FA](https://docs.github.com/en/enterprise-server@3.12/authentication/securing-your-account-with-two-factor-authentication-2fa)
+- [Explain how to secure your account with 2FA](https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication)
+  
+- [Requiring two-factor authentication in your organization](https://docs.github.com/en/organizations/keeping-your-organization-secure/managing-two-factor-authentication-for-your-organization/requiring-two-factor-authentication-in-your-organization)
 
 - [Describe the different access permissions](https://docs.github.com/en/get-started/learning-about-github/access-permissions-on-github)
 
