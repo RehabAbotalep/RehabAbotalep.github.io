@@ -337,6 +337,8 @@ For quick reference, below is a list of exam topics along with the corresponding
 
 - [Describe the main features and options in the Security tab](https://docs.github.com/en/code-security/getting-started/github-security-features)
 
+- [Adding a security policy to your repository](https://docs.github.com/en/code-security/getting-started/adding-a-security-policy-to-your-repository)
+
 - [Define repository insights](https://docs.github.com/en/repositories/viewing-activity-and-data-for-your-repository/using-pulse-to-view-a-summary-of-repository-activity)
 
 - [Explain how to manage collaborators](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-teams-and-people-with-access-to-your-repository)
