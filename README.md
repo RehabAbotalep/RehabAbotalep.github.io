@@ -4,6 +4,7 @@ In this space, I'll be sharing my personal journey, challenges, and experiences 
 
 |![GitHub](./assets/images/readme/github-foundation-exam.png) |[How to Pass GitHub Foundations Certification Exam: My Own Certification Journey](https://rehababotalep.github.io/2024/03/12/github-foundation-exam.html)|
 |:---:|:---:|
+|![Azure DevOps](./assets/images/readme/power-shell.png) |[Tracking Field Usage Across Azure DevOps Project](https://rehababotalep.github.io/2024/06/01/tracking-field-usage.html)|
 |![Azure DevOps](./assets/images/readme/power-shell.png) |[Automating Test Cases Deletion in Azure DevOps with PowerShell](https://rehababotalep.github.io/2023/11/23/delete-testcases.html)|
 |![Azure DevOps](./assets/images/readme/azure-devops.png) |[Migrating Inherited Process in Azure DevOps](https://rehababotalep.github.io/2023/10/21/process-migration.html)|
 |![Azure DevOps](./assets/images/readme/power-shell.png) |[PowerShell Script: List Work Items Moved Between Projects](https://rehababotalep.github.io/2023/09/22/list-moved-work-items.html)|
