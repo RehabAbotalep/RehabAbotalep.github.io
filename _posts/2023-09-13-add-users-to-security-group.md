@@ -2,9 +2,8 @@
 layout: post
 title:  "Automate Adding Users to a Security Group in Azure DevOps"
 date:   2023-09-13 07:35:05 +0100
+tags: [azure-devops, security-groups, powershell-script, productivity]
 ---
-
-`azure-devops` `security-groups` `powershell-script`
 
 This PowerShell script is designed to automate the process of adding users to a security group in Azure DevOps. 
 
@@ -12,7 +11,7 @@ Users are added to the specified group in batches to efficiently handle a large 
 
 The script allows for customization by specifying the PAT, organization, project, group name, and batch size to meet your specific requirements.
 
-{% highlight ruby %}
+```powershell
 # Define your variables
 $PAT = "YOUR_PERSONAL_ACCESS_TOKEN"
 $Organization = "https://dev.azure.com/YOUR_ORGANIZATION_NAME/"
@@ -56,7 +55,7 @@ do {
 
     $skip += $BatchSize
 } while ($allUsers.members.Count -eq $BatchSize)
-{% endhighlight %}
+```
 
 ### Let's dive into the script to understand how it operates:
 
@@ -79,9 +78,8 @@ do {
 
 7. **Looping:** The script continues looping and fetching users in batches until the total number of users fetched is less than the batch size (100).
 
-**🔴IMPORTANT❗🔴**
-
-The default limit for displaying project security group members in Azure DevOps is **500**,  So, If you plan to use the provided script to add more than 500 users, remember that only the first 500 will be visible. 
+> The default limit for displaying project security group members in Azure DevOps is **500**,  So, If you plan to use the provided script to add more than 500 users, remember that only the first 500 will be visible.
+{: .prompt-danger }
 
 **References**
 

@@ -2,16 +2,15 @@
 layout: post
 title:  "PowerShell Script: List Work Items Moved Between Projects"
 date:   2023-09-22 07:20:05 +0100
+tags: [azure-devops, azure-devops-migration-tools, powershell-script, migration]
 ---
-
-`azure-devops` `azure-devops-migration-tools` `powershell-script` `migration`
 
 ### In this post
 
 - [Overview](#overview)
 - [Use Case](#use-case)
 - [Script](#script)
-- [Dive into the script](#lets-dive-into-the-script-to-understand-how-it-operates)
+- [Let's dive into the script to understand how it operates:](#lets-dive-into-the-script-to-understand-how-it-operates)
 - [References](#references)
 
 ## Overview
@@ -44,8 +43,7 @@ Here is the issues link on the GitHub repo for more details.
 
 ## Script
 
-{% highlight ruby %}
-
+```powershell
 param (
 
     [Parameter(Position = 0, mandatory = $false)]
@@ -116,8 +114,7 @@ else {
     # Display a message indicating where the output file was written
     Write-Host "The moved items have been written to '$outputFilePath'."
 }
-
-{% endhighlight %}
+```
 
 ## Let's dive into the script to understand how it operates:
 
@@ -130,7 +127,6 @@ else {
     - $workItemType  = The type of work item you need to check
     - $filePath      = The path where you want to save output file
 
-<br>
 
 2. **Authentication:**
 

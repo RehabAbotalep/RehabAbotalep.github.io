@@ -1,10 +1,9 @@
 ---
 layout: post
-title:  "Tracking Field Usage Across Azure DevOps Project"
+title:  "Tracking Field Usage Across Azure DevOps Projects"
 date:   2024-06-01 23:00:05 +0100
+tags: [azure-devops, work-items, powershell-script, productivity] 
 ---
-
-`azure-devops` `work-items` `powershell-script`
 
 ### In this post
 
@@ -24,8 +23,7 @@ Additionally, the script compiles these findings into a markdown file. This file
 
 ## Script
 
-{% highlight ruby %}
-
+```powershell
 # Prompt user for inputs
 $organization = Read-Host -Prompt "Enter the Azure DevOps organization URL in format https://dev.azure.com/ORGNAME"
 $personalAccessToken = Read-Host -Prompt "Enter your personal access token"
@@ -112,9 +110,7 @@ if ($projectsUsingField.Count -eq 0) {
 
     Write-Output "Markdown file created at: $markdownFilePath"
 }
-
-{% endhighlight %}
-
+```
 
 ## Dive into the script
 

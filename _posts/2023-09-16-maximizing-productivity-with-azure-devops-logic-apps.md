@@ -2,9 +2,8 @@
 layout: post
 title:  "Maximizing Productivity with Azure DevOps & Logic Apps"
 date:   2024-04-21 07:40:05 +0100
+tags: [azure-devops, logic-apps, productivity]
 ---
-
-`azure-devops` `logic-apps` `productivity`
 
 ### In this post
 
@@ -215,16 +214,15 @@ If we open any ticket to have a look from inside, you'll see that it has an ID (
         `[Do-Not-Reply]-Ticket No# <Id> has been created`
 
     - **Body:** Add the desired content.
-
-    **❗Note:** You can access the ID of the ticket from the last step of the workflow (When a new email arrives).
+  
+    > You can access the ID of the ticket from the last step of the workflow (When a new email arrives).
+    {: .prompt-info }
 
     ![Add attributes](/assets/images/logic-apps/22-send-email-arrtibutes.png)
 
 23. Now we are done developing the first workflow, click `Save`
 
     ![Save](/assets/images/logic-apps/23-first-work-flow.png)
-
-**[⬆ Back To Top](#in-this-post)**
 
 #### Task (2): Developing the second workflow
 
@@ -270,7 +268,8 @@ Since we've selected the Consumption plan, to start developing the second workfl
 
     - **Body:** Add the desired content. To include the resolution of the customer's issue, access it from the second custom field we previously created as prerequisite (`Reply`).
 
-    **❗Note:** You can access the ID of the ticket, Email, and Reply fields from the last step of the workflow (When a work item is closed).
+    > You can access the ID of the ticket, Email, and Reply fields from the last step of the workflow (When a work item is closed).
+    {: .prompt-info }
 
     ![Title](/assets/images/logic-apps/29-send-email-to-custom-field.png)
 
@@ -331,6 +330,4 @@ You can find the code for the developed Logic Apps as following:
 
 You can watch the following video that walks you through all the steps explained in this post.
 
-[![Video on YouTube](https://img.youtube.com/vi/AhBsuOYnEEI/0.jpg)](https://www.youtube.com/watch?v=AhBsuOYnEEI&t=417s)
-
-**[⬆ Back To Top](#in-this-post)**
+{% include embed/youtube.html id='AhBsuOYnEEI' %}
