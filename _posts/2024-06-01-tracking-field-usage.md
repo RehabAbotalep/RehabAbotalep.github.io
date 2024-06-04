@@ -3,19 +3,7 @@ layout: post
 title:  "Tracking Field Usage Across Azure DevOps Projects"
 date:   2024-06-01 23:00:05 +0100
 tags: [azure-devops, work-items, powershell-script, productivity] 
-description: In response to a practical need to identify and quantify the usage of a specific field across projects in Azure DevOps, I developed this PowerShell script.
-
 ---
-
-### In this post
-
-- [Overview](#overview)
-- [Script](#script)
-- [Dive into the script](#dive-into-the-script)
-- [Running the Script](#running-the-script)
-- [References](#references)
-
-## Overview
 
 In response to a practical need to identify and quantify the usage of a specific field across projects in Azure DevOps, I developed this PowerShell script.
 
