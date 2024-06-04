@@ -120,25 +120,31 @@ if ($projectsUsingField.Count -eq 0) {
 
 Let's break down each part of the script for a clearer understanding:
 
-#### 1. Prompting User Inputs
+**1. Prompting User Inputs**
+
 The script starts by prompting the user for the Azure DevOps organization URL and a personal access token. These are essential for authenticating API requests.
 
-#### 2. Function for Authorization Header
+**1. Function for Authorization Header**
+
 A function named `Get-AuthorizationHeader` is defined to generate the authorization header using the provided personal access token. This header will be utilized in subsequent REST API calls to Azure DevOps.
 
-#### 3. API URL Template and Functions for Azure DevOps Interactions
-- **$apiUrlTemplate**: This variable holds a template for constructing Azure DevOps API URLs with placeholders for project ID, resource type, and API version.
-- **Get-AllProjects**: Retrieves a list of all projects within the Azure DevOps organization.
-- **Get-ProjectFields**: Fetches the list of fields defined within a specific project.
-- **Query-WorkItems**: Executes a WIQL query to retrieve work items for a given project based on a specified field.
+**1. API URL Template and Functions for Azure DevOps Interactions**
 
-#### 4. Retrieving and Filtering Projects
+  - **$apiUrlTemplate**: This variable holds a template for constructing Azure DevOps API URLs with placeholders for project ID, resource type, and API version.
+  - **Get-AllProjects**: Retrieves a list of all projects within the Azure DevOps organization.
+  - **Get-ProjectFields**: Fetches the list of fields defined within a specific project.
+  - **Query-WorkItems**: Executes a WIQL query to retrieve work items for a given project based on a specified field.
+
+**1. Retrieving and Filtering Projects**
+
 The script retrieves all projects and iterates through them in batches. For each project, it checks if the specified field is used and adds the project name to a list if it is.
 
-#### 5. Outputting Project and Field Statistics
+**1. Outputting Project and Field Statistics**
+
 The script outputs a list of projects using the specified field, along with the count of work items associated with that field in each project. Additionally, it generates markdown content for further documentation and analysis.
 
-#### 6. File Output
+**1. File Output**
+
 If projects are found using the specified field, the script writes markdown content to a file named "Field-Usage.md" in the script's directory, providing a structured overview of field usage across projects.
 
 ## Running the Script
