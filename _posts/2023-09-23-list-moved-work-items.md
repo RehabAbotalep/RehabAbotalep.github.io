@@ -5,16 +5,6 @@ date:   2023-09-22 07:20:05 +0100
 tags: [azure-devops, azure-devops-migration-tools, powershell-script, migration]
 ---
 
-### In this post
-
-- [Overview](#overview)
-- [Use Case](#use-case)
-- [Script](#script)
-- [Let's dive into the script to understand how it operates:](#lets-dive-into-the-script-to-understand-how-it-operates)
-- [References](#references)
-
-## Overview
-
 This PowerShell script is designed to identify and list work items that have been moved from one project to another within a given DevOps organization.
 
 ## Use Case

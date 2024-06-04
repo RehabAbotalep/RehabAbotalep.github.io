@@ -5,17 +5,6 @@ date:   2023-10-21 16:40:05 +0100
 tags: [azure-devops, process-migrator, migration]
 ---
 
-### In this post
-- [Overview](#overview)
-- [Prerequisites](#prerequisites)
-- [Installing process-migrator](#installing-process-migrator)
-- [Creating the configuration file](#creating-the-configuration-file)
-- [Preparing the configuration](#preparing-the-configuration)
-- [Running the Migration](#running-the-migration)
-
-
-## Overview
-
 In this post, we'll explore how to migrate a customized inherited process from one Azure DevOps organization to another. We'll walk through the process using the powerful [process-migrator](https://github.com/microsoft/process-migrator) tool, developed by Microsoft.
 
 ## Prerequisites

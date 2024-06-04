@@ -2,18 +2,8 @@
 layout: post
 title:  "Automating Test Cases Deletion in Azure DevOps with PowerShell"
 date:   2023-11-23 07:35:05 +0100
+tags: [azure-devops, test-cases, powershell-script]
 ---
-
-`azure-devops` `test-cases` `powershell-script`
-
-### In this post
-
-- [Overview](#overview)
-- [Script](#script)
-- [Dive into the script](#dive-into-the-script)
-- [References](#references)
-
-## Overview
 
 While working on a particular use case, I encountered a requirement to delete all Test Cases within my Azure DevOps project. Unfortunately, the user interface (UI) does not provide an option to accomplish this task. Upon exploring the available API options, I discovered that there is no direct API for deleting multiple Test Cases at once; only one Test Case can be deleted at a time.
 
@@ -23,8 +13,7 @@ To address this limitation, I developed a PowerShell script to streamline the pr
 
 ## Script
 
-{% highlight ruby %}
-
+```powershell
 # Variables (Update these as needed)
 $organizationUrl = "ORGANIZATION_URL"
 $projectName = "PROJECT_NAME"
@@ -101,9 +90,6 @@ function Remove-AllAzureDevOpsTestCases {
 # Remove all test cases
 Remove-AllAzureDevOpsTestCases -OrganizationUrl $organizationUrl -ProjectName $projectName -Pat $pat
 
-{% endhighlight %}
-
-
 ## Dive into the script
 
 **1. Variable Initialization:**
@@ -128,13 +114,14 @@ Remove-AllAzureDevOpsTestCases -OrganizationUrl $organizationUrl -ProjectName $p
 
 The last section of the script calls `Remove-AllAzureDevOpsTestCases` with the specified organization URL, project name, and PAT. This triggers the removal of all test cases in the specified Azure DevOps project.
 
-**❗ NOTES ❗**
+> 1. Ensure that you have the necessary permissions in Azure DevOps to query and delete test cases.
+{: .prompt-info }
 
-1. Ensure that you have the necessary permissions in Azure DevOps to query and delete test cases.
+> 2. Make sure to replace the placeholder values for $organizationUrl, $projectName, and $pat with your actual Azure DevOps organization URL, project name, and PAT before running the script.
+{: .prompt-info }
 
-2. Make sure to replace the placeholder values for $organizationUrl, $projectName, and $pat with your actual Azure DevOps organization URL, project name, and PAT before running the script.
-
-3. Always be cautious when running scripts, especially those that modify or delete data. Test the script in a safe environment before using it in a production setting.
+> 3. Always be cautious when running scripts, especially those that modify or delete data. Test the script in a safe environment before using it in a production setting.
+{: .prompt-info }
 
 ## References
 

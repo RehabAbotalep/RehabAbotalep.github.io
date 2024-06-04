@@ -5,24 +5,6 @@ date:   2024-04-21 07:40:05 +0100
 tags: [azure-devops, logic-apps, productivity]
 ---
 
-### In this post
-
-- [Overview](#overview)
-- [Workflows](#workflows)
-    - [Workflow (1): Ticket Creation and Customer Notification](#workflow-1-ticket-creation-and-customer-notification)
-    - [Workflow (2): Ticket Closure and Solution Delivery](#workflow-2-ticket-closure-and-solution-delivery)
-- [Prerequisites](#prerequisites)
-- [Implementation](#implementation)
-    - [Task (1): Developing the first workflow](#task-1-developing-the-first-workflow)
-    - [Task (2): Developing the second workflow](#task-2-developing-the-second-workflow)
-- [Test Workflows](#test-workflows)
-- [Logic App code view](#logic-app-code-view)
-- [References](#references)
-
-
-
-## Overview
-
 In today's fast-paced business landscape, maximizing productivity is crucial for staying competitive and delivering outstanding results.
 By seamlessly integrating Azure DevOps and Logic Apps, organizations can achieve significant productivity gains.
 

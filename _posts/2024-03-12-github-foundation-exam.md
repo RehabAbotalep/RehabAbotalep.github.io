@@ -2,21 +2,8 @@
 layout: post
 title:  "How to Pass GitHub Foundations Certification Exam: My Own Certification Journey"
 date:   2024-03-12 02:25:05 +0100
+tags: [github, certifications, foundation]
 ---
-
-`github` `certifications` `foundation`
-
-### In this post
-
-- [Overview](#overview)
-- [About GitHub Foundation Exam](#about-github-foundations-certification)
-- [Scheduling the Exam](#scheduling-the-exam)
-- [Preparing for the Exam](#preparing-for-the-exam)
-- [Taking the Exam (Proctored at Home)](#taking-the-exam-proctored-at-home)
-- [After the Exam](#after-the-exam)
-- [Conclusion](#conclusion)
-
-## Overview
 
 Earlier this year (2024), GitHub shared some exciting news: certifications that were once only for their employees and partners are now open to everyone worldwide!
 
@@ -390,7 +377,8 @@ It's important to sign in up to 15 minutes before your test start time as per th
 
 ![](/assets/images/github-foundation-exam/legal-name.png)
 
-*`NOTE: Make sure to carefully read the instructions sent to you when you booked the exams`*
+> Make sure to carefully read the instructions sent to you when you booked the exams.
+    {: .prompt-info }
 
 The exam has around 75 questions, and you have 120 minutes to finish it. Once you're done, you'll know right away if you passed or failed.
  
