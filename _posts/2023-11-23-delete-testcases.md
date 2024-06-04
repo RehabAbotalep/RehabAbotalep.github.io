@@ -86,6 +86,7 @@ function Remove-AllAzureDevOpsTestCases {
 
     Write-Host "All test cases deleted."
 }
+```
 
 # Remove all test cases
 Remove-AllAzureDevOpsTestCases -OrganizationUrl $organizationUrl -ProjectName $projectName -Pat $pat

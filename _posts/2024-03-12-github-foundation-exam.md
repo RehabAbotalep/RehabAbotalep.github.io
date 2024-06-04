@@ -3,6 +3,7 @@ layout: post
 title:  "How to Pass GitHub Foundations Certification Exam: My Own Certification Journey"
 date:   2024-03-12 02:25:05 +0100
 tags: [github, certifications, foundation]
+pin: true
 ---
 
 Earlier this year (2024), GitHub shared some exciting news: certifications that were once only for their employees and partners are now open to everyone worldwide!
@@ -394,8 +395,6 @@ Additionally, you'll receive a Credly badge that you can share on your social me
 Starting the GitHub certification journey has been an enriching experience for me. Going beyond just earning a badge,  the preparation process itself enhanced my understanding of GitHub's tools and workflows.
 
 Whether you're a beginner or an experienced user, getting certified can solidify your skills. With determination and ample resources, passing the GitHub Foundations exam is within reach. Best of luck on your certification journey.
-
-**[⬆ Back To Top](#in-this-post)**
 
 
 
