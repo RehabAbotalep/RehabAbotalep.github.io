@@ -20,13 +20,25 @@ $personalAccessToken = Read-Host -Prompt "Enter your personal access token"
 $field = "FIELD_REFERENCE_NAME"
 $batchSize = 10  # Define the number of projects to process in each batch
 
-# Base64-encode the personal access token for authentication
-$base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(":$personalAccessToken"))
+# Function to encode the personal access token and return the authorization header
+function Get-AuthorizationHeader {
+    param (
+        [string]$token
+    )
+    $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(":$token"))
+    return @{ Authorization = "Basic $base64AuthInfo" }
+}
+
+# Define the headers
+$headers = Get-AuthorizationHeader -token $personalAccessToken
+
+# Define the API URL template
+$apiUrlTemplate = "$organization/{0}/_apis/{1}?api-version={2}"
 
 # Function to get the list of all projects
 function Get-AllProjects {
-    $url = "$organization/_apis/projects?api-version=7.0"
-    return (Invoke-RestMethod -Uri $url -Method Get -Headers @{ Authorization = "Basic $base64AuthInfo" }).value
+    $url = $apiUrlTemplate -f "", "projects", "7.0"
+    return (Invoke-RestMethod -Uri $url -Method Get -Headers $headers).value
 }
 
 # Function to get the list of fields in a project
@@ -34,8 +46,8 @@ function Get-ProjectFields {
     param (
         [string]$projectId
     )
-    $url = "$organization/$projectId/_apis/wit/fields?api-version=7.1-preview.3"
-    return (Invoke-RestMethod -Uri $url -Method Get -Headers @{ Authorization = "Basic $base64AuthInfo" }).value
+    $url = $apiUrlTemplate -f "$projectId", "wit/fields", "7.1-preview.3"
+    return (Invoke-RestMethod -Uri $url -Method Get -Headers $headers).value
 }
 
 # Function to query work items for a project
@@ -51,14 +63,20 @@ function Query-WorkItems {
     AND [System.WorkItemType] <> ''
     AND [$field] <> ''
 "@
-    $url = "$organization/$projectName/_apis/wit/wiql?api-version=6.0"
+    $url = $apiUrlTemplate -f "$projectName", "wit/wiql", "6.0"
     $body = @{ query = $query } | ConvertTo-Json
-    return (Invoke-RestMethod -Uri $url -Method Post -Headers @{ Authorization = "Basic $base64AuthInfo" } -Body $body -ContentType "application/json").workItems
+    return (Invoke-RestMethod -Uri $url -Method Post -Headers $headers -Body $body -ContentType "application/json").workItems
 }
 
 # Main script to retrieve and filter projects by the specified field
 $allProjects = Get-AllProjects
 $projectsUsingField = @()
+
+Write-Output "=============================================="
+Write-Output "List of projects using the field '$field'"
+Write-Output "=============================================="
+
+$counter = 1
 
 # Implement batching mechanism
 for ($i = 0; $i -lt $allProjects.Count; $i += $batchSize) {
@@ -70,9 +88,15 @@ for ($i = 0; $i -lt $allProjects.Count; $i += $batchSize) {
 
         if ($projectFields | Where-Object { $_.referenceName -eq $field }) {
             $projectsUsingField += $projectName
+            Write-Output "${counter}: $projectName"
+            $counter++
         }
     }
 }
+
+Write-Output "=============================================="
+Write-Output "Field ($field) Statistics:"
+Write-Output "=============================================="
 
 # Prepare markdown content
 $markdownContent = @"
@@ -90,6 +114,7 @@ if ($projectsUsingField.Count -eq 0) {
         $workItemCount = if ($workItems) { $workItems.Count } else { 0 }
         $markdownContent += "`n|$index|$projectName|$workItemCount|"
         $index++
+        Write-Output "$projectName has $workItemCount work items using the field"
     }
 
     # Define the markdown file path relative to the script's directory
