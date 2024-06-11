@@ -86,9 +86,6 @@ You can modify the script to distribute users across multiple groups, and subseq
 
 **Example:** If you have 900 users in your Azure DevOps environment and you need to include them in a Contributors group within a project, you can create sub-groups, such as **Contributors 01** for the first 500 users and **Contributors 02** for the remaining 400 users. After creating these sub-groups, add them to the main Contributors group.
 
->While creating the sub-groups (Contributors 01 and Contributors 02), ensure they have the same permissions as the main Contributors group.
-{: .prompt-tip }
-
 ### Here is the modified version of the script:
 
 ```powershell
