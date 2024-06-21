@@ -34,7 +34,7 @@ The closure of the ticket serves as the trigger for this workflow. As soon as th
 
 **Customer Solution Delivery:** An email will be send to the customer, containing the comprehensive solution to their ticketed issue.
 
-![Workflow](/assets/images/logic-apps/01-workflow-animation.gif)
+![Workflow](/assets/img/logic-apps/01-workflow-animation.gif)
 
 ## Prerequisites
 
@@ -57,11 +57,11 @@ Before proceeding with the implementation of the demo, it is necessary to comple
 
 Before start creating our Logic Apps, let's have a look at the board, it appears as shown in the following screenshot:
 
-![Tickets](/assets/images/logic-apps/1-tickets.png)
+![Tickets](/assets/img/logic-apps/1-tickets.png)
 
 If we open any ticket to have a look from inside, you'll see that it has an ID (which is unique), a title, a description, and the two custom fields (Email, Reply) that we previously created as prerequisites.
 
-![Ticket from inside](/assets/images/logic-apps/2-ticket-from-inside.png)
+![Ticket from inside](/assets/img/logic-apps/2-ticket-from-inside.png)
 
 #### Task (1): Developing the first workflow
 
@@ -69,15 +69,15 @@ If we open any ticket to have a look from inside, you'll see that it has an ID (
 
 2. In the home page search for `Logic App` and select it.
 
-    ![Select Logic Apps](/assets/images/logic-apps/3-search-for-logic-app.png)
+    ![Select Logic Apps](/assets/img/logic-apps/3-search-for-logic-app.png)
 
 3. Click on Add in Logic Apps page.
 
-    ![Add Logic App](/assets/images/logic-apps/3-add-logic-app.png)
+    ![Add Logic App](/assets/img/logic-apps/3-add-logic-app.png)
 
 4. Under Resource group, click Create new. Enter the desired name and click OK, you can also select an already existing one from the dropdown menu.
 
-    ![Create Resource Group](/assets/images/logic-apps/4-create-resource-group.png)
+    ![Create Resource Group](/assets/img/logic-apps/4-create-resource-group.png)
 
 5. In the Basic tab, choose your subscription, provide a name for your Logic App, select the desired region, and specify the Plan type which dictates how the logic scales, what features are enabled, and how it is priced.
 
@@ -90,56 +90,56 @@ If we open any ticket to have a look from inside, you'll see that it has an ID (
 
     Then click on `Review + create`.
 
-    ![Create the Logic App](/assets/images/logic-apps/5-create-logic-app.png)
+    ![Create the Logic App](/assets/img/logic-apps/5-create-logic-app.png)
 
 6. The deployment will take some time, and after it's completed you can click on `Go to resource`.
 
-    ![Deployment Completed](/assets/images/logic-apps/6-deployment-completed.png)
+    ![Deployment Completed](/assets/img/logic-apps/6-deployment-completed.png)
 
 7. Once click on Go to resource, it will immediately open the `Logic App Designer` view for the deployed Logic App.
 
     With this View, we can visually develop our first workflow. Select Blank Logic App. 
 
-    ![Logic App Designer](/assets/images/logic-apps/7-logic-app-designer.png)
+    ![Logic App Designer](/assets/img/logic-apps/7-logic-app-designer.png)
 
 8. In the workflow designer you can find a list of connectors which we can use to integrate with other systems like Azure DevOps and Outlook in our scenario.
 
     In a connector, each operation is either a trigger condition that starts a workflow or a subsequent action that performs a specific task.
 
-    ![Connectors](/assets/images/logic-apps/8-connectors-triggers.png)
+    ![Connectors](/assets/img/logic-apps/8-connectors-triggers.png)
 
 9. The trigger is always the first step in any workflow that specifies the condition to meet before our workflow can start to run.
 
     The trigger for our scenario is when  receiving an email from a customer in our Outlook inbox.
     Search for Outlook connector and select it.
 
-    ![Outlook connector](/assets/images/logic-apps/9-outlook-connector.png)
+    ![Outlook connector](/assets/img/logic-apps/9-outlook-connector.png)
 
 10. Upon selecting the connector, you will find a list of the triggers and actions for this connector. search for `When a new email arrives (V2)` trigger and select it.
 
-    ![When eamil arrives](/assets/images/logic-apps/10-when-email-arrives.png)
+    ![When eamil arrives](/assets/img/logic-apps/10-when-email-arrives.png)
 
 11. Most connectors typically need you to create and set up a connection to the associated service so that we need to authenticate access to Outlook. 
 
     Click `Sign in` and use your email, which is where you'll receive customer issues.
 
-    ![Outlook sign in](/assets/images/logic-apps/11-outlook-signin.png)
+    ![Outlook sign in](/assets/img/logic-apps/11-outlook-signin.png)
 
 12. Now it is time for adding actions. To add the first action under the last step in the workflow, select `New step`.
 
-    ![Action 1](/assets/images/logic-apps/12-action-1.png)
+    ![Action 1](/assets/img/logic-apps/12-action-1.png)
 
 13. As our first action is to create a new work item in our Azure DevOps organization project, we must establish a connection to Azure DevOps.
 
     Search for Azure DevOps Connector select it, and then select the required action which is `Create a work item`.
 
-    ![Azure DevOps Connector](/assets/images/logic-apps/13-azure-devops-connector.png)
+    ![Azure DevOps Connector](/assets/img/logic-apps/13-azure-devops-connector.png)
 
-    ![Create work item](/assets/images/logic-apps/14-create-work-item.png)
+    ![Create work item](/assets/img/logic-apps/14-create-work-item.png)
 
 14. Click `Sign in` to your Azure DevOps organization.
 
-    ![Azure DevOps sign in](/assets/images/logic-apps/15-sign-in-azure.png)
+    ![Azure DevOps sign in](/assets/img/logic-apps/15-sign-in-azure.png)
 
 15. Add the required attributes:
 
@@ -148,27 +148,27 @@ If we open any ticket to have a look from inside, you'll see that it has an ID (
     - Work Item Type
 
     <br>
-    ![Org Pro Item](/assets/images/logic-apps/16-org-proj-item.png)
+    ![Org Pro Item](/assets/img/logic-apps/16-org-proj-item.png)
 
 16. What should be the title of the work item? In our case we need it to be the subject of the customer's email, so how we can access that? there is a feature in the Logic App that you can access content from the last step.
 
     Select `Subject` from the right menu.
 
-    ![Title](/assets/images/logic-apps/17-title-subject.png)
+    ![Title](/assets/img/logic-apps/17-title-subject.png)
 
 17. For the Description attribute, select `Body` (The body of the customer's email).
 
-    ![Description](/assets/images/logic-apps/17-description-body.png)
+    ![Description](/assets/img/logic-apps/17-description-body.png)
 
 18. As we created a custom field in the prerequisites to capture the customer's (sender) email, it's time to configure it:
 
     Click on `Add new parameters`
 
-    ![New Paramters](/assets/images/logic-apps/18-add-new-paramters.png)
+    ![New Paramters](/assets/img/logic-apps/18-add-new-paramters.png)
 
 19. Select `Other Fields` that include custom fields.
 
-    ![Other Fields](/assets/images/logic-apps/19-other-fields.png)
+    ![Other Fields](/assets/img/logic-apps/19-other-fields.png)
 
 20. To configure the custom field for the customer's email:
 
@@ -176,7 +176,7 @@ If we open any ticket to have a look from inside, you'll see that it has an ID (
 
     - For the value, select `From` (sender) from the last step.
 
-    ![Set custom field](/assets/images/logic-apps/20-set-email-from.png)
+    ![Set custom field](/assets/img/logic-apps/20-set-email-from.png)
 
 21. To add the second action, which involves sending an auto-reply email to the customer, follow these steps:
 
@@ -186,7 +186,7 @@ If we open any ticket to have a look from inside, you'll see that it has an ID (
 
     - Next, search for the `Send an email (V2)` action and select it.
 
-    ![Action 2](/assets/images/logic-apps/21-action-2-send-email.png)
+    ![Action 2](/assets/img/logic-apps/21-action-2-send-email.png)
 
 22. To configure the email attributes for the auto-reply:
 
@@ -201,11 +201,11 @@ If we open any ticket to have a look from inside, you'll see that it has an ID (
     > You can access the ID of the ticket from the last step of the workflow (When a new email arrives).
     {: .prompt-info }
 
-    ![Add attributes](/assets/images/logic-apps/22-send-email-arrtibutes.png)
+    ![Add attributes](/assets/img/logic-apps/22-send-email-arrtibutes.png)
 
 23. Now we are done developing the first workflow, click `Save`
 
-    ![Save](/assets/images/logic-apps/23-first-work-flow.png)
+    ![Save](/assets/img/logic-apps/23-first-work-flow.png)
 
 #### Task (2): Developing the second workflow
 
@@ -213,11 +213,11 @@ Since we've selected the Consumption plan, to start developing the second workfl
 
 1. Navigate to the resource group we've previously created, and click on `Add` to add a new resource (Logic App).
 
-    ![Second Logic App](/assets/images/logic-apps/24-create-second-logic-app.png)
+    ![Second Logic App](/assets/img/logic-apps/24-create-second-logic-app.png)
 
 2. Enter the Project details for this Logic App, as we did in the `step (5)` of the previous task.
 
-    ![Review Create](/assets/images/logic-apps/25-second-review-create.png)
+    ![Review Create](/assets/img/logic-apps/25-second-review-create.png)
 
 3. The trigger for the second workflow occurs when the work item created in the first workflow is closed. To configure this trigger:
 
@@ -225,7 +225,7 @@ Since we've selected the Consumption plan, to start developing the second workfl
 
     - Select the `When a work item is closed ` trigger from the available options.
 
-    ![Trigger](/assets/images/logic-apps/26-when-work-item-closed.png)
+    ![Trigger](/assets/img/logic-apps/26-when-work-item-closed.png)
 
 4. Add the required attributes:
 
@@ -235,11 +235,11 @@ Since we've selected the Consumption plan, to start developing the second workfl
 
     - Type: work item type (Ticket in our case)
 
-    ![Attributes](/assets/images/logic-apps/27-when-work-item-closed-attributes.png)
+    ![Attributes](/assets/img/logic-apps/27-when-work-item-closed-attributes.png)
 
 5. Since we configured the trigger, it is time for adding an action which is sending an email in our case, following the same steps as outlined in `step (21)` of the previous task.
 
-    ![Send an email](/assets/images/logic-apps/28-send-email.png)
+    ![Send an email](/assets/img/logic-apps/28-send-email.png)
 
 6. To configure the email attributes:
 
@@ -254,17 +254,17 @@ Since we've selected the Consumption plan, to start developing the second workfl
     > You can access the ID of the ticket, Email, and Reply fields from the last step of the workflow (When a work item is closed).
     {: .prompt-info }
 
-    ![Title](/assets/images/logic-apps/29-send-email-to-custom-field.png)
+    ![Title](/assets/img/logic-apps/29-send-email-to-custom-field.png)
 
-    ![Send email action](/assets/images/logic-apps/30-send-email-completed.png)
+    ![Send email action](/assets/img/logic-apps/30-send-email-completed.png)
 
 7. Now we are done developing the second workflow, click `Save`
 
-    ![Save](/assets/images/logic-apps/31-second-workflow.png)
+    ![Save](/assets/img/logic-apps/31-second-workflow.png)
 
 8. The following resources have been created upon the completion of developing the two workflows.
 
-    ![Resources](/assets/images/logic-apps/32-resources-created.png)
+    ![Resources](/assets/img/logic-apps/32-resources-created.png)
 
 
 ## Test Workflows
@@ -288,13 +288,13 @@ Once the item is closed (the trigger of our second workflow), an action will be 
 
 Take a look at the gif below:
 
-![Test workflow](/assets/images/logic-apps/33-test-workflow.gif)
+![Test workflow](/assets/img/logic-apps/33-test-workflow.gif)
 
 If you navigate back to the Logic Apps overview, you can find and access the Run history, which provides a record of the past runs of your Logic App workflows. This history allows you to track and monitor the execution of your workflows, including any errors or successful completions.
 
-![Run history](/assets/images/logic-apps/34-run-history.png)
+![Run history](/assets/img/logic-apps/34-run-history.png)
 
-![App Run](/assets/images/logic-apps/35-app-run.png)
+![App Run](/assets/img/logic-apps/35-app-run.png)
 
 ## Logic App code view
 
@@ -302,7 +302,7 @@ You can find the code for the developed Logic Apps as following:
 
 1. On the Logic App's menu, under Development Tools, select Logic App Code View.
 
-![Code view](/assets/images/logic-apps/36-code-view.png)
+![Code view](/assets/img/logic-apps/36-code-view.png)
 
 
 ## References

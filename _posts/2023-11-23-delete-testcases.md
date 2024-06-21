@@ -9,7 +9,7 @@ While working on a particular use case, I encountered a requirement to delete al
 
 To address this limitation, I developed a PowerShell script to streamline the process. The script is designed to retrieve Test Cases based on a specific query, iterate through them, and invoke the deletion API for each Test Case. This approach ensures an automated and efficient process for mass deletion, overcoming the absence of a built-in feature in the UI.
 
-![](/assets/images/delete-testcases/multi-testcases-options.png)
+![](/assets/img/delete-testcases/multi-testcases-options.png)
 
 ## Script
 

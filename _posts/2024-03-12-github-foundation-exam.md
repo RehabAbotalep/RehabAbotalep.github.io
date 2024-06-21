@@ -15,7 +15,7 @@ These certifications cover different skills and knowledge areas related to GitHu
 - GitHub Advanced Security
 - GitHub Administration 
 
-![GitHub Certification Exams](/assets/images/github-foundation-exam/exams.png)
+![GitHub Certification Exams](/assets/img/github-foundation-exam/exams.png)
 
 In this blog post, I'll be sharing my experience with the GitHub Foundations exam, detailing how to schedule, prepare for, and successfully pass it.
 
@@ -47,7 +47,7 @@ Follow these registration steps:
 4. Complete the payment process. The exam costs $99, but for a limited time, it is an additional 50% off.
 5. Review your registration details.
 
-![Registration Steps](/assets/images/github-foundation-exam/registration-steps.png)
+![Registration Steps](/assets/img/github-foundation-exam/registration-steps.png)
 
 Once you've completed these steps, you'll receive an email from PSI Online containing your exam date, time, and important instructions. Make sure to read through them carefully.
 
@@ -59,7 +59,7 @@ For effective preparation, leverage resources such as the [GitHub Foundations le
 
 Additionally, GitHub and Microsoft are launching the new GitHub Foundations livestream series! From March 27th to April 16th, [Register Now](https://developer.microsoft.com/en-us/reactor/series/s-1298/?WT.mc_id=academic-128170-alfredodeza).
 
-![Livestream Sessions](/assets/images/github-foundation-exam/live-sessions.png)
+![Livestream Sessions](/assets/img/github-foundation-exam/live-sessions.png)
 
 Personally, I found both the MS Learning path and GitHub documentation to be valuable resources for my preparation.
 
@@ -376,7 +376,7 @@ For quick reference, below is a list of exam topics along with the corresponding
 
 It's important to sign in up to 15 minutes before your test start time as per the instructions provided when booking your exam. Ensure you adhere to the technical requirements and have a valid, current ID ready. The name on this ID must be in Roman (English) alphabet characters and must match the name used when scheduling the exam.
 
-![](/assets/images/github-foundation-exam/legal-name.png)
+![](/assets/img/github-foundation-exam/legal-name.png)
 
 > Make sure to carefully read the instructions sent to you when you booked the exams.
     {: .prompt-info }

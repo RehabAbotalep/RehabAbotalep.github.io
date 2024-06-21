@@ -15,7 +15,7 @@ It is an out of box tool in Azure DevOps, The migration is very simple and great
 
 Check out the image below for the migration steps:
 
-![import-TFVC.gif](/assets/images/tfvc-git/tfvc-import-tool.gif)
+![import-TFVC.gif](/assets/img/tfvc-git/tfvc-import-tool.gif)
 
 ## Limitation of using TFVC Import Tool:
 
@@ -23,11 +23,11 @@ Using this option has some limitations, including:
 
 The imported repository and associated history cannot exceed `1GB` in size.
 
-![Size Limitation](/assets/images/tfvc-git/size-limitation.png)
+![Size Limitation](/assets/img/tfvc-git/size-limitation.png)
 
 You can import up to only `180` days of history.
 
-![History Limitation](/assets/images/tfvc-git/history-limitation.png)
+![History Limitation](/assets/img/tfvc-git/history-limitation.png)
 
 What if your repo size exceeds 1 GB, or you need to import all history which may exceed 180 days? 
 You may want to consider the second option: using the GIT-TFS tool.
@@ -55,7 +55,7 @@ It is a two-way bridge between TFVC and Git, and you can use it to perform a mig
 
 After running this command, you will have a local Git repo migrated from TFVC. You can then push the resulting local Git repository to any Git platform of your choice, such as Azure DevOps, GitHub, Bitbucket, or others.
 
-![import-TFVC-tfs.gif](/assets/images/tfvc-git/git-tfs.gif)
+![import-TFVC-tfs.gif](/assets/img/tfvc-git/git-tfs.gif)
 
 > The cloning process can take a significant amount of time, depending on the size of your TFVC repository and its history. I have worked on a repository that was **2 GB** in size with **3 branches**, and it took approximately **4 hours** to complete the migration.
 {: .prompt-info }

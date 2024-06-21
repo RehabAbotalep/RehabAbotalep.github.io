@@ -17,7 +17,7 @@ To get started, you'll need to have Node.js and NPM installed on your machine.
 - Open your command prompt (cmd).
 - Type node --version and check if Node.js is installed. If it's not installed, we'll need to proceed with the installation.
 
-![Verify Node.js Installation](/assets/images/process-migration/1-node-not-found.png)
+![Verify Node.js Installation](/assets/img/process-migration/1-node-not-found.png)
 
 2- Download Node.js
 
@@ -27,19 +27,19 @@ Visit [node.js.org](https://nodejs.org/en/download) to download the latest LTS v
 
 Choose the installer that matches your machine. For example, if you're using Windows, select the Windows Installer.
 
-![Download Node.js](/assets/images/process-migration/2-download-node.js.png)
+![Download Node.js](/assets/img/process-migration/2-download-node.js.png)
 
 4- Installation
 
 Locate the downloaded Node.js installer and double-click it to begin the installation, as shown in the screenshot below.
 
-![Install Node.js](/assets/images/process-migration/3-install-node.js.gif)
+![Install Node.js](/assets/img/process-migration/3-install-node.js.gif)
 
 5- Verification
 
 To confirm the successful installation of Node.js, repeat Step (1) by opening your command prompt and running `node --version`. This time, you should see the installed Node.js version displayed.
  
-![Verification](/assets/images/process-migration/4-node-installed.png)
+![Verification](/assets/img/process-migration/4-node-installed.png)
 
 ## Installing process-migrator
 
@@ -47,7 +47,7 @@ Now that your environment is ready, install the process-migrator tool by running
 
 `npm install process-migrator -g`
 
-![Install Process Migrator](/assets/images/process-migration/5-install-process-migrator.png)
+![Install Process Migrator](/assets/img/process-migration/5-install-process-migrator.png)
 
 ## Creating the configuration file
 
@@ -55,11 +55,11 @@ Now that your environment is ready, install the process-migrator tool by running
 
 2. Run the command `process-migrator`. This will generate the configuration file in the specified location.
 
-![Configuration File Creation](/assets/images/process-migration/6-init-config.gif)
+![Configuration File Creation](/assets/img/process-migration/6-init-config.gif)
 
 This is how the created configuration file looks like:
 
-![Configuration File](/assets/images/process-migration/7-config-file.png)
+![Configuration File](/assets/img/process-migration/7-config-file.png)
 
 ## Preparing the configuration
 
@@ -84,7 +84,7 @@ Here's how to set up your PAT:
 
 1- Click on your user settings and select "Personal Access Token".
 
-![Create PAT Step (1)](/assets/images/process-migration/8-create-pat-1.png)
+![Create PAT Step (1)](/assets/img/process-migration/8-create-pat-1.png)
 
 2- Click `New Token`.
 
@@ -98,21 +98,21 @@ Here's how to set up your PAT:
 
 - Click Create
 
-![Create PAT Step (2)](/assets/images/process-migration/9-create-pat-2.png)
+![Create PAT Step (2)](/assets/img/process-migration/9-create-pat-2.png)
 
 3- Copy the value of the PAT, and paste it for sourceAccountToken
 
-![Create PAT Step (3)](/assets/images/process-migration/10-create-pat-3.png)
+![Create PAT Step (3)](/assets/img/process-migration/10-create-pat-3.png)
 
 Repeat these steps for the Target Organization to create a PAT and paste its value for targetAccountToken.
 
 4- Go to the Source organization to copy the source process name, and then paste it for sourceProcessName.
 
-![Source Org Process](/assets/images/process-migration/11-source-org-process.png)
+![Source Org Process](/assets/img/process-migration/11-source-org-process.png)
 
 After defining all the required parameters, your configuration file should look something like this:
 
-![Config File](/assets/images/process-migration/12-config-after-updating-values.png)
+![Config File](/assets/img/process-migration/12-config-after-updating-values.png)
 
 **NOTE:** The configuration file is in `JSONC` format, which means you don't have to remove comment lines for it to work. 
 
@@ -139,7 +139,7 @@ You're all set to start the migration process. Simply open the command prompt (c
 1. The tool will start by exporting the Source process template to a JSON file.
 2. Subsequently, it will import the exported template into the Target organization.
 
-![Migrated](/assets/images/process-migration/13-process-migrated-successfully.png)
+![Migrated](/assets/img/process-migration/13-process-migrated-successfully.png)
 
 **Verification:**
 
@@ -150,16 +150,16 @@ Here are the Target organization processes before and after the Migration:
 
 **Before Migration:**
 
-![Processes before Migration](/assets/images/process-migration/14-target-processes-before-migration.png)
+![Processes before Migration](/assets/img/process-migration/14-target-processes-before-migration.png)
 
 **After Migration:**
 
-![processes after Migration](/assets/images/process-migration/15-target-processes-after-migration.png)
+![processes after Migration](/assets/img/process-migration/15-target-processes-after-migration.png)
 
 The exported JSON and log files are located within the `Output` folder, in the same directory as your configuration file.
 
-![Output Folder Location](/assets/images/process-migration/16-output-folder.png)
+![Output Folder Location](/assets/img/process-migration/16-output-folder.png)
 
-![View from Inside the Output Folder](/assets/images/process-migration/17-output-from-inside.png)
+![View from Inside the Output Folder](/assets/img/process-migration/17-output-from-inside.png)
 
 **[⬆ Back To Top](#in-this-post)**
