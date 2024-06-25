@@ -1,14 +1,14 @@
 ---
 layout: post
-title:  "Adding Members to Microsoft Teams Channels by Tag Using PowerShell"
-date:   2024-06-25 06:00:05 +0100
+title:  "PowerShell Script: Adding Members to MS Teams private Channels by Tag"
+date:   2024-06-25 01:00:05 +0100
 tags: [azure, ms-teams, powershell-script, productivity] 
 ---
 
 ## Overview
 
 I was working on a real use case scenario to add a large list of users to multiple private channels in MS Teams.
-The first option that came to my mind was adding them manually by adding each user to each channel, but after some thought, I asked myself some questions:
+The first option that came to my mind was adding them manually by adding each user to each channel, but after some thought, I asked myself these questions:
 
 1. Doing it manually will be time-consuming? The answer was "yes" as it's a large list and it involves not just one channel but several channels.
 2. Is this a repetitive task? The answer was yes as new members are constantly joining our team. Additionally, if we create a new channel and want to add these members to the newly created one we will have to repeat the process.
@@ -309,7 +309,7 @@ if ($null -ne $teamId -and $null -ne $channelId) {
 ```
 ## Dive into the script
 
-This PowerShell script is used to add members to a Microsoft Teams channel based on a tag. It uses the Microsoft Graph API to interact with Microsoft Teams. Here's an overview of what the script does:
+This PowerShell script is used to add members to a Microsoft Teams private channel based on a tag. It uses the Microsoft Graph API to interact with Microsoft Teams. Here's an overview of what the script does:
 
 1. **Import-Config function:** This function loads a configuration from a JSON file. The configuration includes parameters like tenantId, clientId, clientSecret, batchSize, and batchDelay.
 2. **Get-TeamIdFromUrl and Get-ChannelIdFromUrl functions:** These functions extract the teamId and channelId from the provided URLs.
@@ -326,7 +326,7 @@ The configuration file values are used for the following purposes:
 
 1. **tenantId:** This is the ID of your Microsoft Entra tenant. It's used to authenticate your script with Microsoft Graph API.
 
-2. **clientId and clientSecret:** These are the ID and secret of your Microsoft Entra ID app registration. They are used to authenticate your script with Microsoft Graph API. The script uses these values to get an access token, which is required to make authenticated requests to the Microsoft Graph API.
+2. **clientId and clientSecret:** These are the ID and secret of your Microsoft Entra app registration. They are used to authenticate your script with Microsoft Graph API. The script uses these values to get an access token, which is required to make authenticated requests to the Microsoft Graph API.
 
 3. **batchSize:** This is the number of members to add in each batch. The script adds members to the Teams channel in batches to avoid hitting rate limits of the Microsoft Graph API.
 
@@ -382,7 +382,7 @@ To get tenantId, clientId and clientSecret values follow the following steps:
 10. After Granting Access, here is the list of the configured permissions:  
     ![Configured Permissions](/assets/img/add-to-teams-channel-by-tag/10-permissions-added.png)
 
->If you would like to learn more about Microsoft Graph permissions, check out the following link:
+>If you would like to read more about Microsoft Graph permissions, check out the following link:
 [Overview of Microsoft Graph permissions](https://learn.microsoft.com/en-us/graph/permissions-overview?tabs=http)
 {: .prompt-info }
 
@@ -391,11 +391,11 @@ Your configuration file now is ready, and you are ready to run the script.
 ## Running the script
 
 1. Create a new powershell file, and paste the script inside it
-2. Open PowerShell: Start PowerShell from your Start menu or taskbar.
+2. Start PowerShell from your Start menu.
 3. Navigate to Your Script: `cd path\to\your\script`
 4. Execute the Script: `.\YourScriptName.ps1`
 5. The script will prompt you for the Team link, channel link, and the tag name.
-6. To get the team link, navigate to the desired MS teams team and click on the three dots ..., then get link to  team 
-![Get team link](/assets/img/add-to-teams-channel-by-tag/11-get-team-link.png)
-1. To get the channel link, navigate to the desired MS teams channel that you would like to add users to and click on the three dots ..., then get link to channel
-![Get channel link](/assets/img/add-to-teams-channel-by-tag/12-get-channel-link.png) 
+6. To get the team link, navigate to the desired MS teams team and click on the three dots ..., then get link to team.
+   ![Get team link](/assets/img/add-to-teams-channel-by-tag/11-get-team-link.png)
+7. To get the channel link, navigate to the desired MS teams channel that you would like to add users to and click on the three dots ..., then get link to channel
+    ![Get channel link](/assets/img/add-to-teams-channel-by-tag/12-get-channel-link.png) 
