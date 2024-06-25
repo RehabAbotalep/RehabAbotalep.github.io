@@ -2,6 +2,7 @@
 layout: post
 title:  "Migrating Inherited Process in Azure DevOps"
 date:   2023-10-21 16:40:05 +0100
+categories: [Blogging, Post]
 tags: [azure-devops, process-migrator, migration]
 ---
 

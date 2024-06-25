@@ -2,7 +2,8 @@
 layout: post
 title:  "PowerShell Script: List Work Items Moved Between Projects"
 date:   2023-09-22 07:20:05 +0100
-tags: [azure-devops, azure-devops-migration-tools, powershell-script, migration]
+categories: [Blogging, Script]
+tags: [powershell-script, migration]
 ---
 
 This PowerShell script is designed to identify and list work items that have been moved from one project to another within a given DevOps organization.
