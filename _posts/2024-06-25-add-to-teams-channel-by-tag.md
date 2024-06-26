@@ -6,8 +6,6 @@ categories: [Blogging, Script]
 tags: [azure, ms-teams, powershell-script, productivity] 
 ---
 
-## Overview
-
 I was working on a real use case scenario to add a large list of users to multiple private channels in MS Teams.
 The first option that came to my mind was adding them manually by adding each user to each channel, but after some thought, I asked myself these questions:
 

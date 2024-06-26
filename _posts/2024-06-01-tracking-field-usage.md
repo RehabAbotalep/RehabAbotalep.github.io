@@ -6,8 +6,6 @@ categories: [Blogging, Script]
 tags: [azure-devops, work-items, powershell-script, productivity] 
 ---
 
-## Overview
-
 In response to a practical need to identify and quantify the usage of a specific field across projects in Azure DevOps, I developed this PowerShell script.
 
 This script interacts with the Azure DevOps API, to retrieve a list of projects and analyze each for the presence of a designated field. It not only identifies which projects utilize this field but also counts the work items within those projects that include it. 
