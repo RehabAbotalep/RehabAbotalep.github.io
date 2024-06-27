@@ -337,7 +337,7 @@ By storing these values in a configuration file, you can easily change them with
 
 Create a new configuration json file `config.json` in the same location of your script. Copy the config example above and paste it inside your newly created file.
 
-To get tenantId, clientId and clientSecret values follow the following steps:
+To get tenantId, clientId and clientSecret values we are going to create a Microsoft Entra  App registration in Azure, and assign the appropriate API permissions to the created app. Follow the following steps:
 
 1. Navigate to [portal.azure.com](https://portal.azure.com/)
 2. Go to Microsoft Entra ID (Known before as Azure Active Directory Azure AD)
