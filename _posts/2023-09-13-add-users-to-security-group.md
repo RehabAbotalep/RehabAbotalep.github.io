@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Automate Adding Users to a Security Group in Azure DevOps"
+title:  "PowerShell Script: Automate Adding Users to a Security Group in Azure DevOps"
 date:   2023-09-13 07:35:05 +0100
 categories: [Blogging, Script]
 tags: [powershell-script, productivity]
