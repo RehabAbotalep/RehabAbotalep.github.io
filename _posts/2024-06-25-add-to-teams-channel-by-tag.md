@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "PowerShell Script: Adding Members to MS Teams private Channels by Tag"
-date:   2024-06-25 01:00:05 +0100
+date:   2024-07-25 01:00:05 +0100
 categories: [Blogging, Script]
 tags: [azure, ms-teams, powershell-script, productivity] 
 ---
