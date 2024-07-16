@@ -16,7 +16,7 @@ Therefore, doing it manually will be time-consuming and this is a repeated task,
 
 Since these users are assigned tags, what if we add them to the channels based on their tags? I couldn't find this option in MS Teams. This led me to think about developing a script that automate the process of adding users to the channels based on their tags.
 
-All you need is to provide the Team link, channel link, and the tag name. The script will list all users that are assigned to the provided tag and add them to the specified channel.
+All you need is to provide the channel link, and the tag name. The script will list all users that are assigned to the provided tag and add them to the specified channel.
 
 ## Script
 
