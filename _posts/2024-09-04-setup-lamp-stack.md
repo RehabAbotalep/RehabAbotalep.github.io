@@ -198,4 +198,4 @@ Following this guide will set up a ready-to-use environment for hosting your Q2A
 
 You can watch the following video that walks you through all the steps explained in this post.
 
-{% include embed/youtube.html id='GGy0mtGQapU' %}s
+{% include embed/youtube.html id='GGy0mtGQapU' %}
