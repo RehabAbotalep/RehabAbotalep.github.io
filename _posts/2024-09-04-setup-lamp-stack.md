@@ -66,7 +66,10 @@ ssh azureuser@yourPublicIpAddress
 It’s important to keep your system updated. Start by updating the package lists and upgrading installed packages:
 
 ```bash
-sudo apt update
+sudo apt upgrade -y
+```
+
+```bash
 sudo apt upgrade -y
 ```
 
@@ -81,15 +84,33 @@ If a graphical user interface (GUI) is needed, install the Xfce desktop environm
 
 ```bash
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y install xfce4
+```
+*This command installs the XFCE4 desktop environment on your system. XFCE4 is a lightweight graphical user interface suitable for remote desktop use.*
+
+```bash
 sudo apt install xfce4-session -y
+```
+*This command installs the XFCE4 session management package, which handles user sessions within the XFCE4 desktop environment.*
+
+```bash
 sudo apt-get -y install xrdp
-sudo systemctl enable xrdp
+```
+*This command installs XRDP, a server that enables remote desktop access to your Linux machine using the Remote Desktop Protocol (RDP).*
+
+```bash
 sudo adduser xrdp ssl-cert
+```
+*This command adds the xrdp user to the ssl-cert group, allowing XRDP to use SSL certificates for encrypted connections.*
+
+```bash
 echo xfce4-session >~/.xsession
+```
+*This command configures XFCE4 to be the default desktop session when logging in via XRDP.*
+
+```bash
 sudo service xrdp restart
 ```
-
-These commands set up the Xfce desktop environment and configure XRDP to allow RDP access, providing a lightweight GUI for VM management.
+*This command restarts the XRDP service to apply the new configuration settings.*
 
 ## 8. Install Google Chrome or Firefox
 
@@ -161,10 +182,14 @@ Finally, update the MySQL root user to use native password authentication, setti
 
 ```bash
 sudo mysql
+```
+```bash
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'YourSecurePassword';
 exit
 ```
-
+```bash
+exit
+```
 Replace `YourSecurePassword` with a strong password of your choice to secure your MySQL installation.
 
 Following this guide will set up a ready-to-use environment for hosting your Q2A or WordPress site, optimized for performance and security on Azure. Adjust the configurations as needed to suit your specific requirements.
