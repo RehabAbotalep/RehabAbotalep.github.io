@@ -60,6 +60,8 @@ With the VM running, connect to it using SSH. Use the command below, replacing `
 ```bash
 ssh azureuser@yourPublicIpAddress
 ```
+> Replace `yourPublicIpAddress` with the VM's public IP address and `azureuser` with the username you specified when creating the VM. 
+{: .prompt-info }
 
 ## 6. Update and Upgrade the System
 
@@ -168,13 +170,13 @@ These commands verify that Apache, MySQL, and PHP are installed and running as e
 
 ## 12. Secure MySQL Installation
 
-For added security, run the MySQL secure installation script:
+For added security, run the MySQL secure installation script.
+This script prompts you to set a root password, remove anonymous users, disallow root login remotely, and more, to enhance your MySQL security.
 
 ```bash
 sudo mysql_secure_installation
 ```
-
-This script will guide you through setting a root password, removing anonymous users, disabling root logins remotely, and other security enhancements.
+*This command is used to improve the security of your MySQL installation by guiding you through several important security-related steps*
 
 ## 13. Configure MySQL Root User
 
