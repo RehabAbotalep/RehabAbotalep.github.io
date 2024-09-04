@@ -187,11 +187,15 @@ sudo mysql
 ```
 ```bash
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'YourSecurePassword';
-exit
 ```
 ```bash
 exit
 ```
-Replace `YourSecurePassword` with a strong password of your choice to secure your MySQL installation.
+> Replace `YourSecurePassword` with a strong password of your choice to secure your MySQL installation.
+{: .prompt-info }
 
 Following this guide will set up a ready-to-use environment for hosting your Q2A or WordPress site, optimized for performance and security on Azure. Adjust the configurations as needed to suit your specific requirements.
+
+You can watch the following video that walks you through all the steps explained in this post.
+
+{% include embed/youtube.html id='GGy0mtGQapU' %}s
