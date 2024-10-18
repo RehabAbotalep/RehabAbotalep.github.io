@@ -380,7 +380,7 @@ It's important to sign in up to 15 minutes before your test start time as per th
 ![](/assets/img/github-foundation-exam/legal-name.png)
 
 > Make sure to carefully read the instructions sent to you when you booked the exams.
-    {: .prompt-info }
+{: .prompt-info }
 
 The exam has around 75 questions, and you have 120 minutes to finish it. Once you're done, you'll know right away if you passed or failed.
  
@@ -396,6 +396,9 @@ Additionally, you'll receive a Credly badge that you can share on your social me
 Starting the GitHub certification journey has been an enriching experience for me. Going beyond just earning a badge,  the preparation process itself enhanced my understanding of GitHub's tools and workflows.
 
 Whether you're a beginner or an experienced user, getting certified can solidify your skills. With determination and ample resources, passing the GitHub Foundations exam is within reach. Best of luck on your certification journey.
+
+> If you are preparing for GitHub Actions Exam, check out this post [How to Pass GitHub Actions Certification Exam: My Own Certification Journey](https://rehababotalep.github.io/posts/github-actions-exam/)
+{: .prompt-tip }
 
 
 
